@@ -1,11 +1,22 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'Node18'
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/Ponkoog-roy/Univercity.git'
+            }
+        }
+
+        stage('Node Version') {
+            steps {
+                sh 'node --version'
+                sh 'npm --version'
             }
         }
 
@@ -21,9 +32,8 @@ pipeline {
             }
         }
 
-        stage('Test Build Artifacts') {
+        stage('Verify Build') {
             steps {
-                sh 'ls -la'
                 sh 'ls -la dist'
             }
         }
@@ -31,10 +41,11 @@ pipeline {
 
     post {
         success {
-            echo 'Build completed successfully'
+            echo 'Build Successful'
         }
+
         failure {
-            echo 'Build failed'
+            echo 'Build Failed'
         }
     }
 }
