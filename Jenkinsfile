@@ -1,22 +1,27 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'Node18'
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Ponkoog-roy/Univercity.git'
+                git branch: 'main',
+                    url: 'https://github.com/Ponkoog-roy/Univercity.git'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                sh 'npm install'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building application'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests'
+                sh 'npm run build'
             }
         }
     }
