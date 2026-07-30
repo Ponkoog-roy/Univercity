@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node18'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -13,7 +9,7 @@ pipeline {
             }
         }
 
-        stage('Install') {
+        stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
@@ -23,6 +19,22 @@ pipeline {
             steps {
                 sh 'npm run build'
             }
+        }
+
+        stage('Test Build Artifacts') {
+            steps {
+                sh 'ls -la'
+                sh 'ls -la dist'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build completed successfully'
+        }
+        failure {
+            echo 'Build failed'
         }
     }
 }
