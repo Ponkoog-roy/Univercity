@@ -7,6 +7,7 @@ RUN npm install -g pnpm@11.5.1
 COPY . .
 
 RUN pnpm install
+
 RUN pnpm build:prod
 
 FROM nginx:alpine

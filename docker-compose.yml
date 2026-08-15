@@ -1,10 +1,7 @@
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
-    container_name: react-portal
+  univ:
+    image: uni:latest
+    container_name: univ
 
     ports:
       - "8080:80"
