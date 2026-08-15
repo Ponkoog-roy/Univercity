@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uni-frontend
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: uni-frontend
+
+  template:
+    metadata:
+      labels:
+        app: uni-frontend
+
+    spec:
+      containers:
+      - name: frontend
+        image: uni:latest
+
+        ports:
+        - containerPort: 80
+
+        env:
+        - name: TZ
+          value: Asia/Dhaka

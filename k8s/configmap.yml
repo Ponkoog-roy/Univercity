@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: uni-config
+
+data:
+  TZ: "Asia/Dhaka"
+  APP_NAME: "University Portal"
+  APP_ENV: "development"
