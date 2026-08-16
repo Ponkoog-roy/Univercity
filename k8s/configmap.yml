@@ -3,8 +3,9 @@ kind: ConfigMap
 
 metadata:
   name: uni-config
+  namespace: univercity
 
 data:
+  APP_NAME: "Univercity"
+  APP_ENV: "production"
   TZ: "Asia/Dhaka"
-  APP_NAME: "University Portal"
-  APP_ENV: "development"

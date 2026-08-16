@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+
+metadata:
+  name: uni-pdb
+  namespace: univercity
+
+spec:
+  minAvailable: 1
+
+  selector:
+    matchLabels:
+      app: uni-frontend

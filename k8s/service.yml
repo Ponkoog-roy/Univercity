@@ -3,14 +3,16 @@ kind: Service
 
 metadata:
   name: uni-service
+  namespace: univercity
 
 spec:
+  type: ClusterIP
+
   selector:
     app: uni-frontend
 
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 80
-      nodePort: 30080
-
-  type: NodePort
+      protocol: TCP

@@ -1,10 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: uni-frontend
+  namespace: univercity
 
 spec:
   replicas: 2
+  revisionHistoryLimit: 5
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
 
   selector:
     matchLabels:
@@ -16,13 +25,69 @@ spec:
         app: uni-frontend
 
     spec:
+      terminationGracePeriodSeconds: 30
+
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - uni-frontend
+                topologyKey: kubernetes.io/hostname
+
       containers:
-      - name: frontend
-        image: uni:latest
+        - name: frontend
 
-        ports:
-        - containerPort: 80
+          image: uni:latest
+          imagePullPolicy: IfNotPresent
 
-        env:
-        - name: TZ
-          value: Asia/Dhaka
+          ports:
+            - containerPort: 80
+
+          envFrom:
+            - configMapRef:
+                name: uni-config
+
+         # securityContext:
+          #  runAsNonRoot: true
+           # runAsUser: 101
+          #  allowPrivilegeEscalation: false
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          startupProbe:
+            httpGet:
+              path: /
+              port: 80
+            failureThreshold: 30
+            periodSeconds: 5
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3

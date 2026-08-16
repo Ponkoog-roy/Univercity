@@ -3,16 +3,15 @@ kind: Ingress
 
 metadata:
   name: uni-ingress
+  namespace: univercity
 
 spec:
   rules:
   - host: uni.local
-
     http:
       paths:
       - path: /
         pathType: Prefix
-
         backend:
           service:
             name: uni-service
