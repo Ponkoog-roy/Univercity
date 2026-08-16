@@ -1,0 +1,7 @@
+* [33m60caec6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Productionize Kubernetes deployment with namespace, probes, resources and ingress
+* [33mdec822f[m Productionize Kubernetes deployment with namespace, probes, resources and ingress
+[31m|[m * [33mbb314a9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update README.md
+[31m|[m[31m/[m  
+* [33me9e91d8[m Add Kubernetes deployment and service manifests
+* [33m4e5952c[m Update Docker configuration
+* [33mec15ccb[m Initial commit with Docker deployment
