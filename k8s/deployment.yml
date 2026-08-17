@@ -43,7 +43,7 @@ spec:
       containers:
         - name: frontend
 
-          image: uni:latest
+          image: ponkoog/univercity:v1.0.0
           imagePullPolicy: IfNotPresent
 
           ports:
