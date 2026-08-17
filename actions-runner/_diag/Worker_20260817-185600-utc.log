@@ -1,0 +1,2072 @@
+[2026-08-17 18:56:00Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-08-17 18:56:00Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:00Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:00Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'Runner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-17 18:56:01Z INFO Worker] Version: 2.336.0
+[2026-08-17 18:56:01Z INFO Worker] Commit: 98aabcd429c4e8402406c56ce2d26387fed3b9ce
+[2026-08-17 18:56:01Z INFO Worker] Culture: en-US
+[2026-08-17 18:56:01Z INFO Worker] UI Culture: en-US
+[2026-08-17 18:56:01Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-08-17 18:56:01Z INFO ProcessChannel] Receiving message of length 23400, with hash '41af9ae451fd9661aa1d37f6cd51b650485565f25b7faed0f898b2b2857f2539'
+[2026-08-17 18:56:01Z INFO Worker] Message received.
+[2026-08-17 18:56:01Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/docker-build.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 40,
+        "col": 15,
+        "lit": "Update Kubernetes Deployment"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 42,
+              "col": 14,
+              "expr": "format('kubectl set image deployment/uni-frontend `\nfrontend=ponkoog/univercity:{0} `\n-n univercity\n', github.sha)"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 41,
+              "col": 16,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "9a853de2-9231-4769-b844-e412c5b48e37",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 47,
+        "col": 15,
+        "lit": "Wait for Rollout"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 49,
+              "col": 14,
+              "lit": "kubectl rollout status deployment/uni-frontend -n univercity\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 48,
+              "col": 16,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "7621f0d8-3aac-4bd8-bf76-d338e01af4fa",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 52,
+        "col": 15,
+        "lit": "Verify Image"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 54,
+              "col": 14,
+              "lit": "kubectl get deployment uni-frontend `\n-n univercity `\n-o jsonpath=\"{.spec.template.spec.containers[0].image}\"\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 53,
+              "col": 16,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "f084871c-4678-4ba9-949f-1b9f4d6f11a0",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 59,
+        "col": 15,
+        "lit": "Show Pods"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 61,
+              "col": 14,
+              "lit": "kubectl get pods -n univercity"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 60,
+              "col": 16,
+              "lit": "powershell"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "055f0f26-ddb1-45eb-b663-1349aa52ff7e",
+      "name": "__run_4"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "false"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "true"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_batch_action_resolution": {
+      "value": "false"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_allow_artifacts_file": {
+      "value": "false"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_deprecate_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "true"
+    },
+    "actions_runner_kill_linux_arm32": {
+      "value": "false"
+    },
+    "actions_runner_node20_removal_date": {
+      "value": ""
+    },
+    "actions_runner_node24_default_date": {
+      "value": "June 16th, 2026"
+    },
+    "actions_self_repository": {
+      "value": "true"
+    },
+    "actions_service_container_command": {
+      "value": "true"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_use_bearer_token_for_codeload": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "83660d19-636f-4305-ad98-3ebe1ce438bb.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "83660d19-636f-4305-ad98-3ebe1ce438bb",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "83660d19-636f-4305-ad98-3ebe1ce438bb",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "fd8ce345-26ef-5288-b58f-bd2a2979bf28",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]",
+          "ConnectivityAndDNSChecks": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/97/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+        },
+        {
+          "k": "repository",
+          "v": "Ponkoog-roy/Univercity"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Ponkoog-roy"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "126132052"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Ponkoog-roy/Univercity.git"
+        },
+        {
+          "k": "run_id",
+          "v": "32057426582"
+        },
+        {
+          "k": "run_number",
+          "v": "6"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "126132052"
+        },
+        {
+          "k": "actor",
+          "v": "Ponkoog-roy"
+        },
+        {
+          "k": "workflow",
+          "v": "Build Push Deploy"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "eee7e32edc51f7181a7c81cd25255461528831b5"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "pankaj.kumar@eaze-it-japan.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Pankaj Kumar Roy"
+                              },
+                              {
+                                "k": "username",
+                                "v": "pankaj-roy"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "pankaj.kumar@eaze-it-japan.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Pankaj Kumar Roy"
+                              },
+                              {
+                                "k": "username",
+                                "v": "pankaj-roy"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+                        },
+                        {
+                          "k": "message",
+                          "v": "add grafana and prometheus ingress"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2026-08-18T00:54:47+06:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "338026ddd264b183ed509247bb1488d5d4c86703"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/Ponkoog-roy/Univercity/commit/55813a7f4d3874961ac8bbd9def3ab50a1598465"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/Ponkoog-roy/Univercity/compare/eee7e32edc51...55813a7f4d38"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "pankaj.kumar@eaze-it-japan.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Pankaj Kumar Roy"
+                          },
+                          {
+                            "k": "username",
+                            "v": "pankaj-roy"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "pankaj.kumar@eaze-it-japan.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Pankaj Kumar Roy"
+                          },
+                          {
+                            "k": "username",
+                            "v": "pankaj-roy"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+                    },
+                    {
+                      "k": "message",
+                      "v": "add grafana and prometheus ingress"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2026-08-18T00:54:47+06:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "338026ddd264b183ed509247bb1488d5d4c86703"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/Ponkoog-roy/Univercity/commit/55813a7f4d3874961ac8bbd9def3ab50a1598465"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "126132052+Ponkoog-roy@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "Ponkoog-roy"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Ponkoog-roy/Univercity.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1780629888.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "makeing bater then DIU web"
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Ponkoog-roy/Univercity"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Ponkoog-roy/Univercity.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Ponkoog-roy/Univercity"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1259973212.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "TypeScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "Univercity"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOSxmqXA"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/126132052?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "126132052+Ponkoog-roy@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Ponkoog-roy"
+                          },
+                          {
+                            "k": "id",
+                            "v": 126132052.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "Ponkoog-roy"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Ponkoog-roy"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOB4SfVA"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Ponkoog-roy/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Ponkoog-roy"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1786992898.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 183380.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Ponkoog-roy/Univercity.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Ponkoog-roy/Univercity"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-08-17T16:14:40Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Ponkoog-roy/Univercity"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/126132052?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Ponkoog-roy"
+                    },
+                    {
+                      "k": "id",
+                      "v": 126132052.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "Ponkoog-roy"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOB4SfVA"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Ponkoog-roy/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Ponkoog-roy"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Ponkoog-roy/Univercity/.github/workflows/docker-build.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+        },
+        {
+          "k": "repository_id",
+          "v": "1259973212"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Ponkoog-roy"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 95470942684.0
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Ponkoog-roy/Univercity/.github/workflows/docker-build.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "55813a7f4d3874961ac8bbd9def3ab50a1598465"
+        },
+        {
+          "k": "workflow_repository",
+          "v": "Ponkoog-roy/Univercity"
+        },
+        {
+          "k": "workflow_file_path",
+          "v": ".github/workflows/docker-build.yml"
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2,
+      "d": [
+        {
+          "k": "docker",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "result",
+                "v": "success"
+              },
+              {
+                "k": "outputs",
+                "v": {
+                  "t": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOB4SfVA"
+}
+[2026-08-17 18:56:01Z INFO JobRunner] Job ID fd8ce345-26ef-5288-b58f-bd2a2979bf28
+[2026-08-17 18:56:01Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin\Runner.Worker.dll
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] binPath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] RootFolder: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'Runner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] ConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner_migrated'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner_migrated
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] CredFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_migrated'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_migrated
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'Service': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.service'
+[2026-08-17 18:56:01Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.service
+[2026-08-17 18:56:01Z INFO ConfigurationStore] Read setting file: 399 chars
+[2026-08-17 18:56:01Z INFO JobRunner] Initializing launch client
+[2026-08-17 18:56:01Z INFO JobServerQueue] Initializing results client
+[2026-08-17 18:56:01Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-08-17 18:56:01Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-08-17 18:56:01Z INFO JobServerQueue] Start process web console line queue.
+[2026-08-17 18:56:01Z INFO JobServerQueue] Start process file upload queue.
+[2026-08-17 18:56:01Z INFO JobServerQueue] Start results file upload queue.
+[2026-08-17 18:56:01Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-08-17 18:56:01Z INFO JobServerQueue] Start process timeline update queue.
+[2026-08-17 18:56:01Z INFO ExecutionContext] Initializing Job context
+[2026-08-17 18:56:01Z INFO ExecutionContext] Initialize GitHub context
+[2026-08-17 18:56:01Z INFO ExecutionContext] Initialize Env context
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO JobRunner] Starting the job execution context.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO JobRunner] Validating directory permissions for: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Tools': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_tool'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO JobRunner] Getting job extension.
+[2026-08-17 18:56:01Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.setup_info'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_PipelineMapping\Ponkoog-roy/Univercity\PipelineFolder.json
+[2026-08-17 18:56:01Z INFO PipelineDirectoryManager] Updating job run properties.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO JobExtension] Downloading actions
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Actions': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_actions'
+[2026-08-17 18:56:01Z INFO JobExtension] Adding .
+[2026-08-17 18:56:01Z INFO JobExtension] Adding .
+[2026-08-17 18:56:01Z INFO JobExtension] Adding .
+[2026-08-17 18:56:01Z INFO JobExtension] Adding .
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:01Z INFO JobExtension] Total accessible running process: 365.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO JobExtension] Start checking server connectivity.
+[2026-08-17 18:56:01Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-08-17 18:56:01Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-08-17 18:56:01Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-08-17 18:56:01Z INFO JobExtension] Start checking service connectivity in background.
+[2026-08-17 18:56:01Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "4b33bb7b-e423-4f2b-8f12-7dd56c6f857a",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-17T18:56:01.2589593Z",
+  "finishTime": "2026-08-17T18:56:01.3212655Z"
+}.
+[2026-08-17 18:56:01Z INFO JobRunner] Total job steps: 4.
+[2026-08-17 18:56:01Z INFO JobRunner] Run all job steps.
+[2026-08-17 18:56:01Z INFO DapDebugger] DapDebugger initialized
+[2026-08-17 18:56:01Z INFO StepsRunner] Processing step: DisplayName='Update Kubernetes Deployment'
+[2026-08-17 18:56:01Z INFO StepsRunner] Evaluating: success()
+[2026-08-17 18:56:01Z INFO StepsRunner] Result: true
+[2026-08-17 18:56:01Z INFO StepsRunner] Starting the step.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-17 18:56:01Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Process started with process id 26868, waiting for process exit.
+[2026-08-17 18:56:01Z INFO Worker] Listening for cancel message from the channel.
+[2026-08-17 18:56:01Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Finished process 26868 with exit code 0, and elapsed time 00:00:00.0163857.
+[2026-08-17 18:56:01Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ExecutionContext] Write event payload to C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateArtifactsFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ArtifactsListFileCommand, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-17 18:56:01Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\6e87ad56-647a-409c-8fcf-0328bd2ef159.ps1'"'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\Univercity\Univercity'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Process started with process id 12272, waiting for process exit.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Finished process 12272 with exit code 0, and elapsed time 00:00:00.5253952.
+[2026-08-17 18:56:01Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_runner_file_commands\step_summary_dbda3bb6-75cb-4535-9c29-19ae6e90d761) is empty; skipping attachment upload
+[2026-08-17 18:56:01Z INFO StepsRunner] Step result: 
+[2026-08-17 18:56:01Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "9a853de2-9231-4769-b844-e412c5b48e37",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-17T18:56:01.3331991Z",
+  "finishTime": "2026-08-17T18:56:01.9559654Z"
+}.
+[2026-08-17 18:56:01Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-17 18:56:01Z INFO StepsRunner] Current state: job state = ''
+[2026-08-17 18:56:01Z INFO StepsRunner] Processing step: DisplayName='Wait for Rollout'
+[2026-08-17 18:56:01Z INFO StepsRunner] Evaluating: success()
+[2026-08-17 18:56:01Z INFO StepsRunner] Result: true
+[2026-08-17 18:56:01Z INFO StepsRunner] Starting the step.
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-17 18:56:01Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Process started with process id 10652, waiting for process exit.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Finished process 10652 with exit code 0, and elapsed time 00:00:00.0097817.
+[2026-08-17 18:56:01Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ExecutionContext] Write event payload to C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-17 18:56:01Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-17 18:56:01Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-17 18:56:01Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:01Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:01Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\a5ae5f96-0e2a-4e34-9c68-5558f92644e3.ps1'"'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\Univercity\Univercity'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:01Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:02Z INFO ProcessInvokerWrapper] Process started with process id 17244, waiting for process exit.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_4b33bb7b-e423-4f2b-8f12-7dd56c6f857a.1
+[2026-08-17 18:56:02Z INFO ResultServer] Successfully started websocket client.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4b33bb7b-e423-4f2b-8f12-7dd56c6f857a', success rate: 1/1.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9a853de2-9231-4769-b844-e412c5b48e37', success rate: 1/1.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9a853de2-9231-4769-b844-e412c5b48e37', success rate: 1/1.
+[2026-08-17 18:56:02Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7621f0d8-3aac-4bd8-bf76-d338e01af4fa', success rate: 1/1.
+[2026-08-17 18:56:04Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:04Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_9a853de2-9231-4769-b844-e412c5b48e37.1
+[2026-08-17 18:56:05Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-08-17 18:56:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7621f0d8-3aac-4bd8-bf76-d338e01af4fa', success rate: 1/1.
+[2026-08-17 18:56:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7621f0d8-3aac-4bd8-bf76-d338e01af4fa', success rate: 1/1.
+[2026-08-17 18:56:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7621f0d8-3aac-4bd8-bf76-d338e01af4fa', success rate: 1/1.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Finished process 17244 with exit code 0, and elapsed time 00:00:29.4633798.
+[2026-08-17 18:56:31Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_runner_file_commands\step_summary_c2344101-ecfb-4676-a05a-8bb088c5efe2) is empty; skipping attachment upload
+[2026-08-17 18:56:31Z INFO StepsRunner] Step result: 
+[2026-08-17 18:56:31Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "7621f0d8-3aac-4bd8-bf76-d338e01af4fa",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 30,
+  "startTime": "2026-08-17T18:56:01.9578162Z",
+  "finishTime": "2026-08-17T18:56:31.4556826Z"
+}.
+[2026-08-17 18:56:31Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-17 18:56:31Z INFO StepsRunner] Current state: job state = ''
+[2026-08-17 18:56:31Z INFO StepsRunner] Processing step: DisplayName='Verify Image'
+[2026-08-17 18:56:31Z INFO StepsRunner] Evaluating: success()
+[2026-08-17 18:56:31Z INFO StepsRunner] Result: true
+[2026-08-17 18:56:31Z INFO StepsRunner] Starting the step.
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-17 18:56:31Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Process started with process id 18040, waiting for process exit.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Finished process 18040 with exit code 0, and elapsed time 00:00:00.0129867.
+[2026-08-17 18:56:31Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ExecutionContext] Write event payload to C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-17 18:56:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-17 18:56:31Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\7c6806cd-d316-44e6-96cd-0d533b4da015.ps1'"'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\Univercity\Univercity'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Process started with process id 27376, waiting for process exit.
+[2026-08-17 18:56:31Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:31Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_7621f0d8-3aac-4bd8-bf76-d338e01af4fa.1
+[2026-08-17 18:56:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7621f0d8-3aac-4bd8-bf76-d338e01af4fa', success rate: 1/1.
+[2026-08-17 18:56:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f084871c-4678-4ba9-949f-1b9f4d6f11a0', success rate: 1/1.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Finished process 27376 with exit code 0, and elapsed time 00:00:00.4238461.
+[2026-08-17 18:56:31Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_runner_file_commands\step_summary_97fd9f95-f345-4ae9-8015-578f5c165f80) is empty; skipping attachment upload
+[2026-08-17 18:56:31Z INFO StepsRunner] Step result: 
+[2026-08-17 18:56:31Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "f084871c-4678-4ba9-949f-1b9f4d6f11a0",
+  "stepContextName": "__run_3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-17T18:56:31.4568467Z",
+  "finishTime": "2026-08-17T18:56:31.9137335Z"
+}.
+[2026-08-17 18:56:31Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-17 18:56:31Z INFO StepsRunner] Current state: job state = ''
+[2026-08-17 18:56:31Z INFO StepsRunner] Processing step: DisplayName='Show Pods'
+[2026-08-17 18:56:31Z INFO StepsRunner] Evaluating: success()
+[2026-08-17 18:56:31Z INFO StepsRunner] Result: true
+[2026-08-17 18:56:31Z INFO StepsRunner] Starting the step.
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO StepsRunner] Which2: 'chcp'
+[2026-08-17 18:56:31Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Process started with process id 29616, waiting for process exit.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Finished process 29616 with exit code 0, and elapsed time 00:00:00.0102624.
+[2026-08-17 18:56:31Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ExecutionContext] Write event payload to C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-08-17 18:56:31Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command error
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command group
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-08-17 18:56:31Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-08-17 18:56:31Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Work': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-17 18:56:31Z INFO HostContext] Well known directory 'Temp': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Which2: 'powershell'
+[2026-08-17 18:56:31Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\84837899-e129-42dc-a00b-5075323066a9.ps1'"'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\Univercity\Univercity'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-08-17 18:56:31Z INFO ProcessInvokerWrapper] Process started with process id 14864, waiting for process exit.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f084871c-4678-4ba9-949f-1b9f4d6f11a0', success rate: 1/1.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Try to append 1 batches web console lines for record '055f0f26-ddb1-45eb-b663-1349aa52ff7e', success rate: 1/1.
+[2026-08-17 18:56:32Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:32Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-17 18:56:32Z INFO ProcessInvokerWrapper] Finished process 14864 with exit code 0, and elapsed time 00:00:00.4481590.
+[2026-08-17 18:56:32Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp\_runner_file_commands\step_summary_ea395065-ea2f-46c2-982b-840845d33997) is empty; skipping attachment upload
+[2026-08-17 18:56:32Z INFO StepsRunner] Step result: 
+[2026-08-17 18:56:32Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "055f0f26-ddb1-45eb-b663-1349aa52ff7e",
+  "stepContextName": "__run_4",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-17T18:56:31.9147371Z",
+  "finishTime": "2026-08-17T18:56:32.3977162Z"
+}.
+[2026-08-17 18:56:32Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-08-17 18:56:32Z INFO StepsRunner] Current state: job state = ''
+[2026-08-17 18:56:32Z INFO JobRunner] Finalize job.
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:32Z INFO JobExtension] Initialize Env context
+[2026-08-17 18:56:32Z INFO JobExtension] Initialize steps context
+[2026-08-17 18:56:32Z INFO JobExtension] Total accessible running process: 371.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Try to append 1 batches web console lines for record '055f0f26-ddb1-45eb-b663-1349aa52ff7e', success rate: 1/1.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e735703c-4eb0-45ea-bf91-2c8d67b97791', success rate: 1/1.
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 8876 (chrome)
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 7092 (SearchProtocolHost)
+[2026-08-17 18:56:32Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 31296 (chrome)
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 10060 (SearchFilterHost)
+[2026-08-17 18:56:32Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 12160 (WmiPrvSE)
+[2026-08-17 18:56:32Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 14968 (SearchFilterHost)
+[2026-08-17 18:56:32Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 30612 (chrome)
+[2026-08-17 18:56:32Z INFO JobExtension] Inspecting process environment variables. PID: 23016 (chrome)
+[2026-08-17 18:56:32Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-08-17 18:56:32Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://broker.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-08-17T18:56:01.3137871Z",
+  "statusCode": "http_OK",
+  "requestId": "FD32:2BA043:133BC2F:13AF704:6A835942",
+  "httpRequestDurationInMs": 884,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-17 18:56:32Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://token.actions.githubusercontent.com/ready",
+  "endpointIPs": null,
+  "startTime": "2026-08-17T18:56:01.318876Z",
+  "statusCode": "http_NoContent",
+  "requestId": "FD33:239BCA:C04952:D4A783:6A835942",
+  "httpRequestDurationInMs": 879,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-17 18:56:32Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://run.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-08-17T18:56:01.3191184Z",
+  "statusCode": "http_OK",
+  "requestId": "FD31:1C219F:162B20E:165DD49:6A835942",
+  "httpRequestDurationInMs": 909,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-08-17 18:56:32Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "e735703c-4eb0-45ea-bf91-2c8d67b97791",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-08-17T18:56:32.4067155Z",
+  "finishTime": "2026-08-17T18:56:32.4766614Z"
+}.
+[2026-08-17 18:56:32Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-08-17 18:56:32Z INFO JobRunner] Completing the job execution context.
+[2026-08-17 18:56:32Z INFO JobRunner] Shutting down the job server queue.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-08-17 18:56:32Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-08-17 18:56:33Z INFO JobServerQueue] All queue process task stopped.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Web console line queue drained.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2026-08-17 18:56:33Z INFO JobServerQueue] File upload queue drained.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-08-17 18:56:33Z INFO JobServerQueue] Uploading 4 file(s) in one shot through results service.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:33Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_f084871c-4678-4ba9-949f-1b9f4d6f11a0.1
+[2026-08-17 18:56:34Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:34Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_055f0f26-ddb1-45eb-b663-1349aa52ff7e.1
+[2026-08-17 18:56:35Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-08-17 18:56:35Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_e735703c-4eb0-45ea-bf91-2c8d67b97791.1
+[2026-08-17 18:56:36Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-08-17 18:56:36Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\blocks\83660d19-636f-4305-ad98-3ebe1ce438bb_fd8ce345-26ef-5288-b58f-bd2a2979bf28.1
+[2026-08-17 18:56:37Z INFO JobServerQueue] Tried to upload 4 file(s) to results, success rate: 4/4.
+[2026-08-17 18:56:37Z INFO JobServerQueue] Results upload queue drained.
+[2026-08-17 18:56:37Z INFO JobServerQueue] Timeline update queue drained.
+[2026-08-17 18:56:37Z INFO JobServerQueue] Disposing job server ...
+[2026-08-17 18:56:37Z INFO JobServerQueue] Disposing results server ...
+[2026-08-17 18:56:37Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-08-17 18:56:37Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_work\_temp
+[2026-08-17 18:56:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 18:56:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 18:56:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag'
+[2026-08-17 18:56:37Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\_diag\.telemetry'
+[2026-08-17 18:56:37Z INFO JobRunner] Raising job completed against run service
+[2026-08-17 18:56:38Z INFO Worker] Job completed.
