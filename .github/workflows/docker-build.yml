@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build Push Deploy
 
 on:
   push:
@@ -31,3 +31,27 @@ jobs:
           tags: |
             ponkoog/univercity:latest
             ponkoog/univercity:${{ github.sha }}
+
+  deploy:
+    needs: docker
+    runs-on: self-hosted
+
+    steps:
+      - name: Update Deployment Image
+        shell: powershell
+        run: |
+          kubectl set image deployment/uni-frontend `
+          uni-frontend=ponkoog/univercity:${{ github.sha }} `
+          -n univercity
+
+      - name: Wait for Rollout
+        shell: powershell
+        run: |
+          kubectl rollout status deployment/uni-frontend -n univercity
+
+      - name: Show Current Image
+        shell: powershell
+        run: |
+          kubectl get deployment uni-frontend `
+          -n univercity `
+          -o jsonpath="{.spec.template.spec.containers[0].image}"

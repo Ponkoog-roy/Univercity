@@ -1,0 +1,169 @@
+[2026-08-17 15:31:20Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'Runner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-17 15:31:20Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-08-17 15:31:20Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-08-17 15:31:20Z INFO Listener] Version: 2.336.0
+[2026-08-17 15:31:20Z INFO Listener] Commit: 98aabcd429c4e8402406c56ce2d26387fed3b9ce
+[2026-08-17 15:31:20Z INFO Listener] Culture: en-US
+[2026-08-17 15:31:20Z INFO Listener] UI Culture: en-US
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO Listener] Validating directory permissions for: 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO CommandLineParser] Parse
+[2026-08-17 15:31:20Z INFO CommandLineParser] Parsing 5 args
+[2026-08-17 15:31:20Z INFO CommandLineParser] parsing argument
+[2026-08-17 15:31:20Z INFO CommandLineParser] HasArgs: False
+[2026-08-17 15:31:20Z INFO CommandLineParser] Adding Command: configure
+[2026-08-17 15:31:20Z INFO CommandLineParser] parsing argument
+[2026-08-17 15:31:20Z INFO CommandLineParser] HasArgs: True
+[2026-08-17 15:31:20Z INFO CommandLineParser] arg: url
+[2026-08-17 15:31:20Z INFO CommandLineParser] parsing argument
+[2026-08-17 15:31:20Z INFO CommandLineParser] HasArgs: True
+[2026-08-17 15:31:20Z INFO CommandLineParser] Adding option 'url': 'https://github.com/Ponkoog-roy/Univercity'
+[2026-08-17 15:31:20Z INFO CommandLineParser] parsing argument
+[2026-08-17 15:31:20Z INFO CommandLineParser] HasArgs: True
+[2026-08-17 15:31:20Z INFO CommandLineParser] arg: token
+[2026-08-17 15:31:20Z INFO CommandLineParser] parsing argument
+[2026-08-17 15:31:20Z INFO CommandLineParser] HasArgs: True
+[2026-08-17 15:31:20Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-08-17 15:31:20Z INFO Listener] Arguments parsed
+[2026-08-17 15:31:20Z INFO Runner] ExecuteCommand
+[2026-08-17 15:31:20Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin\Runner.Listener.dll
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] binPath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] RootFolder: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'Runner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] ConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner_migrated'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.runner_migrated
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] CredFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_migrated'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_migrated
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:20Z INFO HostContext] Well known config file 'Service': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.service'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.service
+[2026-08-17 15:31:20Z INFO CommandSettings] Flag 'help': 'False'
+[2026-08-17 15:31:20Z INFO CommandSettings] Flag 'version': 'False'
+[2026-08-17 15:31:20Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-08-17 15:31:20Z INFO CommandSettings] Flag 'check': 'False'
+[2026-08-17 15:31:20Z INFO CommandSettings] Command 'configure': 'True'
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE: |                       
+[2026-08-17 15:31:20Z INFO Terminal] WRITE: Self-hosted runner registration
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE:                         |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-08-17 15:31:20Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-08-17 15:31:20Z INFO ConfigurationManager] ConfigureAsync
+[2026-08-17 15:31:20Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2026-08-17 15:31:20Z INFO ConfigurationStore] IsConfigured()
+[2026-08-17 15:31:20Z INFO ConfigurationStore] IsConfigured: False
+[2026-08-17 15:31:20Z INFO ConfigurationManager] Is configured: False
+[2026-08-17 15:31:20Z INFO CommandSettings] Arg 'url': 'https://github.com/Ponkoog-roy/Univercity'
+[2026-08-17 15:31:20Z INFO CommandSettings] Remove url from Arg dictionary.
+[2026-08-17 15:31:20Z INFO CommandSettings] Arg 'token': '***'
+[2026-08-17 15:31:20Z INFO CommandSettings] Remove token from Arg dictionary.
+[2026-08-17 15:31:20Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (CF59:2F22E3:D3DE3:D6FBA:6A832948)
+[2026-08-17 15:31:20Z INFO ConfigurationManager] Using runner-admin flow: False
+[2026-08-17 15:31:20Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2026-08-17 15:31:20Z INFO RunnerServer] EstablishVssConnection
+[2026-08-17 15:31:20Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-08-17 15:31:20Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-17 15:31:21Z INFO RunnerServer] EstablishVssConnection
+[2026-08-17 15:31:21Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-08-17 15:31:21Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-17 15:31:21Z INFO RunnerServer] EstablishVssConnection
+[2026-08-17 15:31:21Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-08-17 15:31:21Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-17 15:31:22Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-17 15:31:22Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-17 15:31:25Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-17 15:31:25Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:25Z INFO ConfigurationManager] Test Connection complete.
+[2026-08-17 15:31:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-17 15:31:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner'
+[2026-08-17 15:31:25Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_rsaparams'
+[2026-08-17 15:31:25Z INFO RSAEncryptedFileKeyManager] Creating new RSA key using 2048-bit key length
+[2026-08-17 15:31:25Z INFO RSAEncryptedFileKeyManager] Successfully saved RSA key parameters to file C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials_rsaparams
+[2026-08-17 15:31:26Z INFO CommandSettings] Arg 'runnergroup': ''
+[2026-08-17 15:31:26Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-08-17 15:31:26Z INFO PromptManager] ReadValue
+[2026-08-17 15:31:26Z INFO Terminal] WRITE: Enter the name of the runner group to add this runner to: 
+[2026-08-17 15:31:26Z INFO Terminal] WRITE: [press Enter for Default] 
+[2026-08-17 15:31:26Z INFO Terminal] READ LINE
+[2026-08-17 15:31:34Z INFO Terminal] Read value: ''
+[2026-08-17 15:31:34Z INFO PromptManager] Falling back to the default: 'Default'
+[2026-08-17 15:31:34Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:34Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2026-08-17 15:31:34Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-08-17 15:31:34Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-08-17 15:31:34Z INFO CommandSettings] Arg 'name': ''
+[2026-08-17 15:31:34Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-08-17 15:31:34Z INFO PromptManager] ReadValue
+[2026-08-17 15:31:34Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-08-17 15:31:34Z INFO Terminal] WRITE: [press Enter for EAZE-IT-JAPAN] 
+[2026-08-17 15:31:34Z INFO Terminal] READ LINE
+[2026-08-17 15:31:44Z INFO Terminal] Read value: ''
+[2026-08-17 15:31:44Z INFO PromptManager] Falling back to the default: 'EAZE-IT-JAPAN'
+[2026-08-17 15:31:44Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:44Z INFO CommandSettings] Arg 'labels': ''
+[2026-08-17 15:31:44Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-08-17 15:31:44Z INFO PromptManager] ReadValue
+[2026-08-17 15:31:44Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Windows', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-08-17 15:31:44Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-08-17 15:31:44Z INFO Terminal] READ LINE
+[2026-08-17 15:31:50Z INFO Terminal] Read value: ''
+[2026-08-17 15:31:50Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:50Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-08-17 15:31:50Z INFO CommandSettings] Flag 'no-default-labels': 'False'
+[2026-08-17 15:31:50Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-08-17 15:31:50Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-08-17 15:31:50Z INFO ConfigurationStore] Saving OAuth credential @ C:\Users\PankajKumarRoy\Desktop\Univercity-main\actions-runner\.credentials
+[2026-08-17 15:31:50Z INFO ConfigurationStore] Credentials Saved.
+[2026-08-17 15:31:50Z INFO ConfigurationManager] Service enforced serverUrlV2: https://broker.actions.githubusercontent.com/
+[2026-08-17 15:31:50Z INFO ConfigurationManager] Service enforced useV2Flow: True
+[2026-08-17 15:31:50Z INFO CommandSettings] Arg 'work': ''
+[2026-08-17 15:31:50Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-08-17 15:31:50Z INFO PromptManager] ReadValue
+[2026-08-17 15:31:50Z INFO Terminal] WRITE: Enter name of work folder: 
+[2026-08-17 15:31:50Z INFO Terminal] WRITE: [press Enter for _work] 
+[2026-08-17 15:31:50Z INFO Terminal] READ LINE
+[2026-08-17 15:31:57Z INFO Terminal] Read value: ''
+[2026-08-17 15:31:57Z INFO PromptManager] Falling back to the default: '_work'
+[2026-08-17 15:31:57Z INFO ConfigurationStore] Saving runner settings.
+[2026-08-17 15:31:57Z INFO ConfigurationStore] Settings Saved.
+[2026-08-17 15:31:57Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:57Z INFO Terminal] WRITE LINE: 
+[2026-08-17 15:31:57Z INFO CommandSettings] Flag 'runasservice': 'False'
+[2026-08-17 15:31:57Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-08-17 15:31:57Z INFO PromptManager] ReadValue
+[2026-08-17 15:31:57Z INFO Terminal] WRITE: Would you like to run the runner as service? (Y/N) 
+[2026-08-17 15:31:57Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-08-17 15:31:57Z INFO Terminal] READ LINE
+[2026-08-17 15:33:10Z INFO Terminal] Read value: ''
+[2026-08-17 15:33:10Z INFO PromptManager] Falling back to the default: 'N'
+[2026-08-17 15:33:10Z INFO Listener] Runner execution has finished with return code 0
