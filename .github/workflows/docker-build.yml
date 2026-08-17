@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push
+      - name: Build and Push Image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -37,11 +37,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Update Deployment Image
+      - name: Update Kubernetes Deployment
         shell: powershell
         run: |
           kubectl set image deployment/uni-frontend `
-          uni-frontend=ponkoog/univercity:${{ github.sha }} `
+          frontend=ponkoog/univercity:${{ github.sha }} `
           -n univercity
 
       - name: Wait for Rollout
@@ -49,9 +49,14 @@ jobs:
         run: |
           kubectl rollout status deployment/uni-frontend -n univercity
 
-      - name: Show Current Image
+      - name: Verify Image
         shell: powershell
         run: |
           kubectl get deployment uni-frontend `
           -n univercity `
           -o jsonpath="{.spec.template.spec.containers[0].image}"
+
+      - name: Show Pods
+        shell: powershell
+        run: |
+          kubectl get pods -n univercity
