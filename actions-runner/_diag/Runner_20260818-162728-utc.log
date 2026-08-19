@@ -1,0 +1,166 @@
+[2026-08-18 16:27:28Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-18 16:27:28Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-08-18 16:27:28Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-08-18 16:27:28Z INFO Listener] Version: 2.336.0
+[2026-08-18 16:27:28Z INFO Listener] Commit: 98aabcd429c4e8402406c56ce2d26387fed3b9ce
+[2026-08-18 16:27:28Z INFO Listener] Culture: en-US
+[2026-08-18 16:27:28Z INFO Listener] UI Culture: en-US
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO Listener] Validating directory permissions for: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO CommandLineParser] Parse
+[2026-08-18 16:27:28Z INFO CommandLineParser] Parsing 1 args
+[2026-08-18 16:27:28Z INFO CommandLineParser] parsing argument
+[2026-08-18 16:27:28Z INFO CommandLineParser] HasArgs: False
+[2026-08-18 16:27:28Z INFO CommandLineParser] Adding Command: run
+[2026-08-18 16:27:28Z INFO Listener] Arguments parsed
+[2026-08-18 16:27:28Z INFO Runner] ExecuteCommand
+[2026-08-18 16:27:28Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin\Runner.Listener.dll
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] binPath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] RootFolder: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.runner'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] ConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.runner
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.runner_migrated'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.runner_migrated
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] CredFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials_migrated'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials_migrated
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'Service': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.service'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.service
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'help': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'version': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'check': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Command 'configure': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Command 'remove': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-08-18 16:27:28Z INFO ConfigurationManager] LoadSettings
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsConfigured()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsConfigured: True
+[2026-08-18 16:27:28Z INFO ConfigurationManager] Is configured: True
+[2026-08-18 16:27:28Z INFO ConfigurationStore] Read setting file: 389 chars
+[2026-08-18 16:27:28Z INFO ConfigurationManager] Settings Loaded
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-08-18 16:27:28Z INFO CommandSettings] Command 'run': 'True'
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsConfigured()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsConfigured: True
+[2026-08-18 16:27:28Z INFO ConfigurationManager] Is configured: True
+[2026-08-18 16:27:28Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-08-18 16:27:28Z INFO Runner] Set runner startup type - Manual
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'once': 'False'
+[2026-08-18 16:27:28Z INFO CommandSettings] Flag 'once': 'False'
+[2026-08-18 16:27:28Z INFO Runner] RunAsync
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Work': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-18 16:27:28Z INFO Runner] Validating directory permissions for: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\_work'
+[2026-08-18 16:27:28Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] IsMigratedConfigured: True
+[2026-08-18 16:27:28Z INFO ConfigurationStore] Read migrated setting file: 389 chars
+[2026-08-18 16:27:28Z INFO ConfigurationManager] Migrated Settings Loaded
+[2026-08-18 16:27:28Z INFO Runner] Loaded migrated settings from .runner_migrated file
+[2026-08-18 16:27:28Z INFO Runner] {
+  "AgentId": 2,
+  "AgentName": "EAZE-IT-JAPAN",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+  "GitHubUrl": "https://github.com/Ponkoog-roy/Univercity",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-08-18 16:27:28Z INFO Runner] Attempting to create session using migrated settings
+[2026-08-18 16:27:28Z INFO Runner] Using BrokerMessageListener
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] Using provided settings
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] Using migrated settings from .runner_migrated
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] {
+  "AgentId": 2,
+  "AgentName": "EAZE-IT-JAPAN",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+  "GitHubUrl": "https://github.com/Ponkoog-roy/Univercity",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] Loading Credentials
+[2026-08-18 16:27:28Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] stored True
+[2026-08-18 16:27:28Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:27:28Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:27:28Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\bin'
+[2026-08-18 16:27:28Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner'
+[2026-08-18 16:27:28Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials_rsaparams'
+[2026-08-18 16:27:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials_rsaparams
+[2026-08-18 16:27:28Z ERR  Runner] Exception when creating session with migrated settings: System.Security.Cryptography.CryptographicException: Key not valid for use in specified state.
+   at System.Security.Cryptography.ProtectedData.TryProtectOrUnprotect(ReadOnlySpan`1 inputData, ReadOnlySpan`1 optionalEntropy, DataProtectionScope scope, Boolean protect, Int32& bytesWritten, Byte[]& outputData, Boolean allocateArray, Span`1 outputSpan)
+   at System.Security.Cryptography.ProtectedData.Unprotect(Byte[] encryptedData, Byte[] optionalEntropy, DataProtectionScope scope)
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.LoadParameters()
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Runner.Listener.Configuration.OAuthCredential.<>c__DisplayClass2_0.<GetVssCredentials>b__0()
+   at GitHub.Services.WebApi.VssSigningCredentials.Create(Func`1 factory, Boolean requireFipsCryptography)
+   at GitHub.Runner.Listener.Configuration.OAuthCredential.GetVssCredentials(IHostContext context, Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+   at GitHub.Runner.Listener.Runner.RunAsync(RunnerSettings settings, Boolean runOnce, Boolean returnRunOnceJobResult)
+[2026-08-18 16:27:28Z INFO Runner] Falling back to original .runner settings
+[2026-08-18 16:27:28Z INFO Runner] Using BrokerMessageListener
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] Using provided settings
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] {
+  "AgentId": 2,
+  "AgentName": "EAZE-IT-JAPAN",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+  "GitHubUrl": "https://github.com/Ponkoog-roy/Univercity",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-08-18 16:27:28Z INFO BrokerMessageListener] Loading Credentials
+[2026-08-18 16:27:28Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:27:28Z INFO ConfigurationStore] stored True
+[2026-08-18 16:27:28Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:27:28Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:27:28Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:27:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\.credentials_rsaparams
+[2026-08-18 16:27:28Z ERR  Terminal] WRITE ERROR: An error occurred: Key not valid for use in specified state.
+[2026-08-18 16:27:28Z ERR  Listener] System.Security.Cryptography.CryptographicException: Key not valid for use in specified state.
+   at System.Security.Cryptography.ProtectedData.TryProtectOrUnprotect(ReadOnlySpan`1 inputData, ReadOnlySpan`1 optionalEntropy, DataProtectionScope scope, Boolean protect, Int32& bytesWritten, Byte[]& outputData, Boolean allocateArray, Span`1 outputSpan)
+   at System.Security.Cryptography.ProtectedData.Unprotect(Byte[] encryptedData, Byte[] optionalEntropy, DataProtectionScope scope)
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.LoadParameters()
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Runner.Listener.Configuration.OAuthCredential.<>c__DisplayClass2_0.<GetVssCredentials>b__0()
+   at GitHub.Services.WebApi.VssSigningCredentials.Create(Func`1 factory, Boolean requireFipsCryptography)
+   at GitHub.Runner.Listener.Configuration.OAuthCredential.GetVssCredentials(IHostContext context, Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+   at GitHub.Runner.Listener.Runner.RunAsync(RunnerSettings settings, Boolean runOnce, Boolean returnRunOnceJobResult)
+   at GitHub.Runner.Listener.Runner.ExecuteRunnerAsync(RunnerSettings settings, Boolean runOnce, Boolean returnRunOnceJobResult)
+   at GitHub.Runner.Listener.Runner.ExecuteCommand(CommandSettings command)
+   at GitHub.Runner.Listener.Program.MainAsync(IHostContext context, String[] args)

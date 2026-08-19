@@ -20,6 +20,21 @@ pnpm dev
 
 Push your commits — Enter.pro will automatically detect and sync your latest changes.
 
+# Docker desktop setup process
+cd scripts
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+.\bootstrap-cluster.ps1
+
+kubectl edit deployment metrics-server -n kube-system
+- --kubelet-insecure-tls
+
+kubectl rollout restart deployment metrics-server -n kube-system
+
+helm upgrade --install monitoring `
+prometheus-community/kube-prometheus-stack `
+-n monitoring `
+--create-namespace `
+-f .\monitoring\values.yaml
 ---
 
 ## i18n

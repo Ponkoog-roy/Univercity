@@ -1,0 +1,565 @@
+[2026-08-18 16:01:51Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:51Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials'
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:51Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.runner'
+[2026-08-18 16:01:51Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-08-18 16:01:51Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-08-18 16:01:51Z INFO Listener] Version: 2.336.0
+[2026-08-18 16:01:51Z INFO Listener] Commit: 98aabcd429c4e8402406c56ce2d26387fed3b9ce
+[2026-08-18 16:01:51Z INFO Listener] Culture: en-US
+[2026-08-18 16:01:51Z INFO Listener] UI Culture: en-US
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:51Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:51Z INFO Listener] Validating directory permissions for: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:51Z INFO CommandLineParser] Parse
+[2026-08-18 16:01:51Z INFO CommandLineParser] Parsing 1 args
+[2026-08-18 16:01:51Z INFO CommandLineParser] parsing argument
+[2026-08-18 16:01:51Z INFO CommandLineParser] HasArgs: False
+[2026-08-18 16:01:51Z INFO CommandLineParser] Adding Command: run
+[2026-08-18 16:01:51Z INFO Listener] Arguments parsed
+[2026-08-18 16:01:52Z INFO Runner] ExecuteCommand
+[2026-08-18 16:01:52Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin\Runner.Listener.dll
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] binPath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] RootFolder: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.runner'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] ConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.runner
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.runner_migrated'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.runner_migrated
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] CredFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_migrated'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_migrated
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'Service': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.service'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.service
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'help': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'version': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'check': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Command 'configure': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Command 'remove': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-08-18 16:01:52Z INFO ConfigurationManager] LoadSettings
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsConfigured()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsConfigured: True
+[2026-08-18 16:01:52Z INFO ConfigurationManager] Is configured: True
+[2026-08-18 16:01:52Z INFO ConfigurationStore] Read setting file: 394 chars
+[2026-08-18 16:01:52Z INFO ConfigurationManager] Settings Loaded
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-08-18 16:01:52Z INFO CommandSettings] Command 'run': 'True'
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsConfigured()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsConfigured: True
+[2026-08-18 16:01:52Z INFO ConfigurationManager] Is configured: True
+[2026-08-18 16:01:52Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-08-18 16:01:52Z INFO Runner] Set runner startup type - Manual
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'once': 'False'
+[2026-08-18 16:01:52Z INFO CommandSettings] Flag 'once': 'False'
+[2026-08-18 16:01:52Z INFO Runner] RunAsync
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Work': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\_work'
+[2026-08-18 16:01:52Z INFO Runner] Validating directory permissions for: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\_work'
+[2026-08-18 16:01:52Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-08-18 16:01:52Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-08-18 16:01:52Z INFO Runner] Falling back to original .runner settings
+[2026-08-18 16:01:52Z INFO Runner] Using BrokerMessageListener
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] Using provided settings
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] {
+  "AgentId": 22,
+  "AgentName": "Asus-lp",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+  "GitHubUrl": "https://github.com/Ponkoog-roy/Univercity",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] Loading Credentials
+[2026-08-18 16:01:52Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] stored True
+[2026-08-18 16:01:52Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:01:52Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:01:52Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:01:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner'
+[2026-08-18 16:01:52Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams'
+[2026-08-18 16:01:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] Attempt to create session.
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-08-18 16:01:52Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:01:52Z INFO ConfigurationStore] stored True
+[2026-08-18 16:01:52Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:01:52Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:01:52Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:01:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] VssConnection created
+[2026-08-18 16:01:52Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-08-18 16:01:52Z INFO RunnerServer] EstablishVssConnection
+[2026-08-18 16:01:52Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-08-18 16:01:53Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-18 16:01:53Z INFO RunnerServer] EstablishVssConnection
+[2026-08-18 16:01:53Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-08-18 16:01:53Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-18 16:01:53Z INFO RunnerServer] EstablishVssConnection
+[2026-08-18 16:01:53Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-08-18 16:01:53Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-08-18 16:01:55Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-18 16:01:55Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-18 16:01:55Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-08-18 16:01:56Z INFO BrokerMessageListener] VssConnection created
+[2026-08-18 16:01:56Z INFO Terminal] WRITE LINE: 
+[2026-08-18 16:01:56Z INFO Terminal] WRITE LINE: 
+[2026-08-18 16:01:56Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:01:56Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:01:57Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-08-18 16:01:59Z INFO BrokerMessageListener] Session created.
+[2026-08-18 16:01:59Z INFO Terminal] WRITE LINE: Current runner version: '2.336.0'
+[2026-08-18 16:01:59Z INFO Terminal] WRITE LINE: 2026-08-18 16:01:59Z: Listening for Jobs
+[2026-08-18 16:01:59Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2026-08-18 16:01:59Z INFO BrokerMessageListener] Acknowledging runner request 'ee71e08b-506b-5ba4-8343-5a61ca748cc4'.
+[2026-08-18 16:02:00Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:02:00Z INFO ConfigurationStore] stored True
+[2026-08-18 16:02:00Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:02:00Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:02:00Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:02:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:02:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:02:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:02:01Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-08-18 16:02:03Z INFO JobDispatcher] Job request 0 for plan 29d2d963-8faa-40a4-9cb0-a15deec76439 job ee71e08b-506b-5ba4-8343-5a61ca748cc4 received.
+[2026-08-18 16:02:03Z INFO JobDispatcher] Pull OrchestrationId 29d2d963-8faa-40a4-9cb0-a15deec76439.deploy.__default from JWT claims
+[2026-08-18 16:02:03Z INFO BrokerMessageListener] Received job status event. JobState: Busy
+[2026-08-18 16:02:03Z INFO BrokerMessageListener] _getMessagesTokenSource is already disposed.
+[2026-08-18 16:02:03Z INFO Terminal] WRITE LINE: 2026-08-18 16:02:03Z: Running job: deploy
+[2026-08-18 16:02:03Z INFO JobDispatcher] Start renew job request 0 for job ee71e08b-506b-5ba4-8343-5a61ca748cc4.
+[2026-08-18 16:02:04Z INFO JobDispatcher] Successfully renew job ee71e08b-506b-5ba4-8343-5a61ca748cc4, job is valid till 8/18/2026 4:12:04 PM
+[2026-08-18 16:02:04Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper] Starting process:
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin\Runner.Worker.exe'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 2244 2256'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\bin'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2026-08-18 16:02:04Z INFO ProcessInvokerWrapper] Process started with process id 9340, waiting for process exit.
+[2026-08-18 16:02:04Z INFO JobDispatcher] Send job request message to worker for job ee71e08b-506b-5ba4-8343-5a61ca748cc4.
+[2026-08-18 16:02:05Z INFO ProcessChannel] Sending message of length 23509, with hash 'a946f772ffab931b851af28ab7606476e695c27c5cb03d134a4472f7468202de'
+[2026-08-18 16:02:06Z INFO JobNotification] Entering JobStarted Notification
+[2026-08-18 16:02:06Z INFO JobNotification] Entering StartMonitor
+[2026-08-18 16:02:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-18 16:02:21Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-08-18 16:02:21Z INFO ProcessInvokerWrapper] Finished process 9340 with exit code 102, and elapsed time 00:00:17.1913127.
+[2026-08-18 16:02:21Z INFO JobDispatcher] Worker finished for job ee71e08b-506b-5ba4-8343-5a61ca748cc4. Code: 102
+[2026-08-18 16:02:21Z INFO JobDispatcher] finish job request for job ee71e08b-506b-5ba4-8343-5a61ca748cc4 with result: Failed
+[2026-08-18 16:02:21Z INFO Terminal] WRITE LINE: 2026-08-18 16:02:21Z: Job deploy completed with result: Failed
+[2026-08-18 16:02:21Z INFO JobDispatcher] Stop renew job request for job ee71e08b-506b-5ba4-8343-5a61ca748cc4.
+[2026-08-18 16:02:21Z INFO JobDispatcher] job renew has been cancelled, stop renew job ee71e08b-506b-5ba4-8343-5a61ca748cc4.
+[2026-08-18 16:02:21Z INFO JobNotification] Entering JobCompleted Notification
+[2026-08-18 16:02:21Z INFO JobNotification] Entering EndMonitor
+[2026-08-18 16:02:21Z INFO BrokerMessageListener] Received job status event. JobState: Online
+[2026-08-18 16:02:21Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Busy&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false has been cancelled.
+[2026-08-18 16:02:21Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:02:21Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:02:21Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:02:21Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2026-08-18 16:02:21Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:02:21Z ERR  BrokerServer] System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:02:21Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:02:21Z ERR  BrokerServer] System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+[2026-08-18 16:02:21Z WARN BrokerServer] Back off 14.262 seconds before next retry. 4 attempt left.
+[2026-08-18 16:02:21Z INFO BrokerMessageListener] Get messages has been cancelled using local token source. Continue to get messages with new status.
+[2026-08-18 16:51:40Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: ConnectionReset). The operation will be retried in 10.936 seconds.
+[2026-08-18 16:51:51Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 12.454 seconds.
+[2026-08-18 16:52:04Z WARN GitHubActionsService] Attempt 3 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 16.965 seconds.
+[2026-08-18 16:52:21Z ERR  GitHubActionsService] Attempt 4 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The maximum number of attempts has been reached.
+[2026-08-18 16:52:21Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:52:21Z ERR  BrokerServer] System.Net.Http.HttpRequestException: No such host is known. (broker.actions.githubusercontent.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:52:21Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:52:21Z ERR  BrokerServer] System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:52:21Z WARN BrokerServer] Back off 12.256 seconds before next retry. 4 attempt left.
+[2026-08-18 16:52:33Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 10.961 seconds.
+[2026-08-18 16:52:44Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 13.063 seconds.
+[2026-08-18 16:52:57Z WARN GitHubActionsService] Attempt 3 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 18.05 seconds.
+[2026-08-18 16:53:15Z ERR  GitHubActionsService] Attempt 4 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The maximum number of attempts has been reached.
+[2026-08-18 16:53:15Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:53:15Z ERR  BrokerServer] System.Net.Http.HttpRequestException: No such host is known. (broker.actions.githubusercontent.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:53:15Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:53:15Z ERR  BrokerServer] System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:53:15Z WARN BrokerServer] Back off 12.21 seconds before next retry. 3 attempt left.
+[2026-08-18 16:53:28Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 11.152 seconds.
+[2026-08-18 16:53:39Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 13.465 seconds.
+[2026-08-18 16:53:52Z WARN GitHubActionsService] Attempt 3 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 17.154 seconds.
+[2026-08-18 16:54:09Z ERR  GitHubActionsService] Attempt 4 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The maximum number of attempts has been reached.
+[2026-08-18 16:54:09Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:54:09Z ERR  BrokerServer] System.Net.Http.HttpRequestException: No such host is known. (broker.actions.githubusercontent.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:54:09Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:54:09Z ERR  BrokerServer] System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:54:09Z WARN BrokerServer] Back off 13.791 seconds before next retry. 2 attempt left.
+[2026-08-18 16:54:23Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 10.897 seconds.
+[2026-08-18 16:54:34Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 12.658 seconds.
+[2026-08-18 16:54:47Z WARN GitHubActionsService] Attempt 3 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 18.309 seconds.
+[2026-08-18 16:55:05Z ERR  GitHubActionsService] Attempt 4 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The maximum number of attempts has been reached.
+[2026-08-18 16:55:05Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:55:05Z ERR  BrokerServer] System.Net.Http.HttpRequestException: No such host is known. (broker.actions.githubusercontent.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:55:05Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:55:05Z ERR  BrokerServer] System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:55:05Z WARN BrokerServer] Back off 6.375 seconds before next retry. 1 attempt left.
+[2026-08-18 16:55:11Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 10.807 seconds.
+[2026-08-18 16:55:22Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 12.568 seconds.
+[2026-08-18 16:55:35Z WARN GitHubActionsService] Attempt 3 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 16.888 seconds.
+[2026-08-18 16:55:52Z ERR  GitHubActionsService] Attempt 4 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The maximum number of attempts has been reached.
+[2026-08-18 16:55:52Z ERR  BrokerMessageListener] Catch exception during get next message.
+[2026-08-18 16:55:52Z ERR  BrokerMessageListener] System.Net.Http.HttpRequestException: No such host is known. (broker.actions.githubusercontent.com:443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+   at GitHub.Runner.Listener.BrokerMessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-08-18 16:55:52Z ERR  BrokerMessageListener] #####################################################
+[2026-08-18 16:55:52Z ERR  BrokerMessageListener] System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2026-08-18 16:55:52Z INFO BrokerMessageListener] Retriable exception: No such host is known. (broker.actions.githubusercontent.com:443)
+[2026-08-18 16:55:52Z ERR  Terminal] WRITE ERROR: 2026-08-18 16:55:52Z: Runner connect error: No such host is known. (broker.actions.githubusercontent.com:443). Retrying until reconnected.
+[2026-08-18 16:55:52Z INFO BrokerMessageListener] Reload credentials.
+[2026-08-18 16:55:52Z INFO ConfigurationStore] HasCredentials()
+[2026-08-18 16:55:52Z INFO ConfigurationStore] stored True
+[2026-08-18 16:55:52Z INFO CredentialManager] GetCredentialProvider
+[2026-08-18 16:55:52Z INFO CredentialManager] Creating type OAuth
+[2026-08-18 16:55:52Z INFO CredentialManager] Creating credential type: OAuth
+[2026-08-18 16:55:52Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:55:52Z INFO BrokerMessageListener] Connection to Broker Server recreated.
+[2026-08-18 16:55:52Z INFO BrokerMessageListener] Sleeping for 25.893 seconds before retrying.
+[2026-08-18 16:56:18Z INFO BrokerMessageListener] No message retrieved within last 30 minutes.
+[2026-08-18 16:56:18Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:56:18Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:56:18Z WARN GitHubActionsService] Attempt 1 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 11.022 seconds.
+[2026-08-18 16:56:29Z WARN GitHubActionsService] Attempt 2 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 13.594 seconds.
+[2026-08-18 16:56:42Z WARN GitHubActionsService] Attempt 3 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 18.183 seconds.
+[2026-08-18 16:57:01Z WARN GitHubActionsService] Attempt 4 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 27.565 seconds.
+[2026-08-18 16:57:28Z WARN GitHubActionsService] Attempt 5 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 36.474 seconds.
+[2026-08-18 16:57:58Z WARN GitHubActionsService] Retrieving an AAD auth token took a long time (100.0017967 seconds)
+[2026-08-18 16:57:58Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false timed out after 100 seconds.
+[2026-08-18 16:57:58Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:57:58Z ERR  BrokerServer] System.TimeoutException: The HTTP request timed out after 00:01:40.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:57:58Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:57:58Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+[2026-08-18 16:57:58Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:57:58Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2026-08-18 16:57:58Z WARN BrokerServer] Back off 9.77 seconds before next retry. 4 attempt left.
+[2026-08-18 16:58:08Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 16:58:08Z WARN GitHubActionsService] Attempt 1 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 11.18 seconds.
+[2026-08-18 16:58:19Z WARN GitHubActionsService] Attempt 2 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 12.703 seconds.
+[2026-08-18 16:58:31Z WARN GitHubActionsService] Attempt 3 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 17.511 seconds.
+[2026-08-18 16:58:49Z WARN GitHubActionsService] Attempt 4 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 24.775 seconds.
+[2026-08-18 16:59:14Z WARN GitHubActionsService] Attempt 5 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 45.96 seconds.
+[2026-08-18 16:59:48Z WARN GitHubActionsService] Retrieving an AAD auth token took a long time (100.0006877 seconds)
+[2026-08-18 16:59:48Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false timed out after 100 seconds.
+[2026-08-18 16:59:48Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 16:59:48Z ERR  BrokerServer] System.TimeoutException: The HTTP request timed out after 00:01:40.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 16:59:48Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:59:48Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+[2026-08-18 16:59:48Z ERR  BrokerServer] #####################################################
+[2026-08-18 16:59:48Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2026-08-18 16:59:48Z WARN BrokerServer] Back off 14.93 seconds before next retry. 3 attempt left.
+[2026-08-18 17:00:02Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 17:00:02Z WARN GitHubActionsService] Attempt 1 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 11.144 seconds.
+[2026-08-18 17:00:14Z WARN GitHubActionsService] Attempt 2 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 13.501 seconds.
+[2026-08-18 17:00:27Z WARN GitHubActionsService] Attempt 3 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 16.258 seconds.
+[2026-08-18 17:00:43Z WARN GitHubActionsService] Attempt 4 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 25.675 seconds.
+[2026-08-18 17:01:09Z WARN GitHubActionsService] Attempt 5 of POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/e6bf50dd-df48-43a0-990b-2c842d2848e0 failed (Socket Error: HostNotFound). The operation will be retried in 35.854 seconds.
+[2026-08-18 17:01:42Z WARN GitHubActionsService] Retrieving an AAD auth token took a long time (100.0005396 seconds)
+[2026-08-18 17:01:42Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false timed out after 100 seconds.
+[2026-08-18 17:01:42Z ERR  BrokerServer] Catch exception during request
+[2026-08-18 17:01:42Z ERR  BrokerServer] System.TimeoutException: The HTTP request timed out after 00:01:40.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-08-18 17:01:42Z ERR  BrokerServer] #####################################################
+[2026-08-18 17:01:42Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+[2026-08-18 17:01:42Z ERR  BrokerServer] #####################################################
+[2026-08-18 17:01:42Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2026-08-18 17:01:42Z WARN BrokerServer] Back off 10.86 seconds before next retry. 2 attempt left.
+[2026-08-18 17:01:53Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 17:01:55Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-08-18 17:52:17Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 17:52:18Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-08-18 18:42:41Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\Mr. Nobody\Desktop\Univercity-main\actions-runner\actions-runner\.credentials_rsaparams
+[2026-08-18 18:42:43Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-08-18 19:02:19Z WARN GitHubActionsService] Attempt 1 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: ConnectionReset). The operation will be retried in 10.841 seconds.
+[2026-08-18 19:02:30Z WARN GitHubActionsService] Attempt 2 of GET request to https://broker.actions.githubusercontent.com/message?sessionId=08162668-01ce-404c-9096-c1ea3ad9e985&status=Online&runnerVersion=2.336.0&os=Windows&architecture=X64&disableUpdate=false failed (Socket Error: HostNotFound). The operation will be retried in 12.886 seconds.

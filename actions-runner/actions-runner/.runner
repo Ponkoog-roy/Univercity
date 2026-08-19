@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 22,
+  "agentName": "Asus-lp",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/bxDI1ewPLVMP7Hl1xK7DNRt8OjkmBKnvBFANzTtn7hqumVRTLO/",
+  "gitHubUrl": "https://github.com/Ponkoog-roy/Univercity",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

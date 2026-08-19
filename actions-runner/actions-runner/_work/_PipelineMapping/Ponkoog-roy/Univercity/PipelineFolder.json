@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Ponkoog-roy/Univercity",
+  "pipelineDirectory": "Univercity",
+  "workspaceDirectory": "Univercity\\Univercity",
+  "repositories": {
+    "Ponkoog-roy/Univercity": {
+      "repositoryPath": "Univercity\\Univercity",
+      "lastRunOn": "08/18/2026 22:02:07 +06:00"
+    }
+  },
+  "lastRunOn": "08/18/2026 22:02:07 +06:00"
+}
