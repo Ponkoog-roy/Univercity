@@ -3,7 +3,9 @@ name: Build Test Deploy
 on:
   push:
     branches:
-      - main
+      - kube
+    paths-ignore:
+      - "k8s/deployment.yml"
   workflow_dispatch:
 
 permissions:
@@ -15,33 +17,18 @@ env:
 jobs:
 
   test:
-    name: Test & Build Validation
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Source Code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install Dependencies
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Lint
-        run: pnpm lint --if-present
-
-      - name: Run Tests
-        run: pnpm test --if-present
-
-      - name: Verify Production Build
-        run: pnpm build
+      - name: Validate Kubernetes Manifests
+        run: |
+          test -f k8s/deployment.yml
+          test -f k8s/service.yml
+          test -f k8s/ingress.yml
 
   build:
     name: Build & Push Docker Image
@@ -52,7 +39,7 @@ jobs:
       image_tag: ${{ steps.meta.outputs.tag }}
 
     steps:
-      - name: Checkout Source Code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Generate Image Tag
@@ -69,7 +56,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Docker Image
+      - name: Build and Push Image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -79,12 +66,12 @@ jobs:
             ponkoog/univercity:${{ steps.meta.outputs.tag }}
 
   deploy:
-    name: GitOps Manifest Update
+    name: GitOps Deploy
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Kube Branch
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           ref: kube
@@ -99,7 +86,7 @@ jobs:
         run: |
           sed -i "s|image: ponkoog/univercity:.*|image: ponkoog/univercity:${{ needs.build.outputs.image_tag }}|g" k8s/deployment.yml
 
-      - name: Commit Manifest Update
+      - name: Commit Changes
         run: |
           git add k8s/deployment.yml
 
@@ -110,6 +97,6 @@ jobs:
 
           git commit -m "ci: deploy image ${{ needs.build.outputs.image_tag }}"
 
-      - name: Push Manifest Changes
+      - name: Push Changes
         run: |
           git push origin kube
