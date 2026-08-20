@@ -3,9 +3,7 @@ name: Build Test Deploy
 on:
   push:
     branches:
-      - kube
-    paths-ignore:
-      - "k8s/deployment.yml"
+      - main
   workflow_dispatch:
 
 permissions:
@@ -17,23 +15,24 @@ env:
 jobs:
 
   test:
-    name: Test
+    name: Test & Build Validation
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
 
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Lint
         run: pnpm lint --if-present
@@ -50,21 +49,21 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      image_tag: ${{ steps.vars.outputs.tag }}
+      image_tag: ${{ steps.meta.outputs.tag }}
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
       - name: Generate Image Tag
-        id: vars
+        id: meta
         run: |
           echo "tag=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Docker Hub Login
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -76,16 +75,16 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:latest
-            ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
+            ponkoog/univercity:latest
+            ponkoog/univercity:${{ steps.meta.outputs.tag }}
 
   deploy:
-    name: Deploy (GitOps)
+    name: GitOps Manifest Update
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Kube Branch
         uses: actions/checkout@v4
         with:
           ref: kube
@@ -96,21 +95,21 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-      - name: Update Kubernetes Manifest
+      - name: Update Image Tag
         run: |
           sed -i "s|image: ponkoog/univercity:.*|image: ponkoog/univercity:${{ needs.build.outputs.image_tag }}|g" k8s/deployment.yml
 
-      - name: Commit Manifest Change
+      - name: Commit Manifest Update
         run: |
           git add k8s/deployment.yml
 
           if git diff --cached --quiet; then
-            echo "No manifest changes detected"
+            echo "No changes detected"
             exit 0
           fi
 
           git commit -m "ci: deploy image ${{ needs.build.outputs.image_tag }}"
 
-      - name: Push Changes
+      - name: Push Manifest Changes
         run: |
           git push origin kube
