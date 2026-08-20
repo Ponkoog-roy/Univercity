@@ -11,8 +11,8 @@ spec:
     kind: Deployment
     name: uni-frontend
 
-  minReplicas: 2
-  maxReplicas: 5
+  minReplicas: 3
+  maxReplicas: 6
 
   metrics:
   - type: Resource
