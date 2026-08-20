@@ -1,62 +1,116 @@
-name: Build Push Deploy
+name: Build Test Deploy
 
 on:
   push:
     branches:
-      - main
+      - kube
+    paths-ignore:
+      - "k8s/deployment.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+env:
+  IMAGE_NAME: ponkoog/univercity
+
 jobs:
-  docker:
+
+  test:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint --if-present
+
+      - name: Run Tests
+        run: pnpm test --if-present
+
+      - name: Verify Production Build
+        run: pnpm build
+
+  build:
+    name: Build & Push Docker Image
+    needs: test
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_tag: ${{ steps.vars.outputs.tag }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Generate Image Tag
+        id: vars
+        run: |
+          echo "tag=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to Docker Hub
+      - name: Docker Hub Login
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Image
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
-            ponkoog/univercity:latest
-            ponkoog/univercity:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
 
   deploy:
-    needs: docker
-    runs-on: self-hosted
+    name: Deploy (GitOps)
+    needs: build
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Update Kubernetes Deployment
-        shell: powershell
-        run: |
-          kubectl set image deployment/uni-frontend `
-          frontend=ponkoog/univercity:${{ github.sha }} `
-          -n univercity
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: kube
+          fetch-depth: 0
 
-      - name: Wait for Rollout
-        shell: powershell
+      - name: Configure Git
         run: |
-          kubectl rollout status deployment/uni-frontend -n univercity
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
-      - name: Verify Image
-        shell: powershell
+      - name: Update Kubernetes Manifest
         run: |
-          kubectl get deployment uni-frontend `
-          -n univercity `
-          -o jsonpath="{.spec.template.spec.containers[0].image}"
+          sed -i "s|image: ponkoog/univercity:.*|image: ponkoog/univercity:${{ needs.build.outputs.image_tag }}|g" k8s/deployment.yml
 
-      - name: Show Pods
-        shell: powershell
+      - name: Commit Manifest Change
         run: |
-          kubectl get pods -n univercity
+          git add k8s/deployment.yml
+
+          if git diff --cached --quiet; then
+            echo "No manifest changes detected"
+            exit 0
+          fi
+
+          git commit -m "ci: deploy image ${{ needs.build.outputs.image_tag }}"
+
+      - name: Push Changes
+        run: |
+          git push origin kube

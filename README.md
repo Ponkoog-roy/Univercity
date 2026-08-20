@@ -1,135 +1,317 @@
+Univercity
 
+Modern React application with GitOps-based Kubernetes deployment, ArgoCD continuous delivery, and Prometheus/Grafana monitoring.
 
-## Local development
+Local Development
 
-Prefer to work locally? You can clone this repo and start developing right away:
+Clone the repository and start developing locally.
 
-```bash
-# Step 1: Clone your project repository
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate into the project folder
+# Enter the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install all dependencies
+# Install dependencies
 pnpm install
 
-# Step 4: Start the local development server
+# Start development server
 pnpm dev
-```
 
-Push your commits — Enter.pro will automatically detect and sync your latest changes.
 
-# Docker desktop setup process
+Any commits pushed to GitHub will be automatically detected and synchronized by ArgoCD.
+
+Docker Desktop Kubernetes Setup
+Prerequisites
+
+Install:
+
+Docker Desktop (Kubernetes Enabled)
+kubectl
+Helm
+Node.js
+pnpm
+
+Verify tools:
+
+kubectl version --client
+helm version
+docker version
+pnpm --version
+
+Bootstrap the Cluster
+
+Navigate to the scripts folder:
+
 cd scripts
+
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+
 .\bootstrap-cluster.ps1
 
+Configure Metrics Server
+
+Edit the Metrics Server deployment:
+
 kubectl edit deployment metrics-server -n kube-system
+
+
+Add the following argument:
+
 - --kubelet-insecure-tls
 
+
+Restart Metrics Server:
+
 kubectl rollout restart deployment metrics-server -n kube-system
+
+
+Verify:
+
+kubectl top nodes
+kubectl top pods -A
+
+Monitoring Stack
+
+Install the monitoring stack (Prometheus + Grafana + Alertmanager):
 
 helm upgrade --install monitoring `
 prometheus-community/kube-prometheus-stack `
 -n monitoring `
 --create-namespace `
 -f .\monitoring\values.yaml
----
 
-## i18n
 
-This template ships a minimal browser-side i18n baseline built on:
+Verify:
 
-- `i18next`
-- `react-i18next`
-- `i18next-http-backend`
-- `i18next-browser-languagedetector`
+kubectl get pods -n monitoring
 
-### Source-of-truth files
 
-The template only owns three pieces of i18n data:
+Expected components:
 
-- `i18n.config.json` — language manifest (`fallbackLng`, `languages[].{code,label,detect,dir}`)
-- `public/locales/{code}.json` — flat dotted-key translations, one file per language
-- `src/i18n/config.ts` + `src/i18n/util.ts` — runtime entry and pure helpers
-- `src/components/language-switcher.tsx` — neutral-themed UI sample
+Prometheus
+Grafana
+Alertmanager
+kube-state-metrics
+Node Exporter
+Prometheus Operator
+Access Grafana
 
-### Runtime behavior
+Get the admin password:
 
-- reads the manifest from `i18n.config.json`
-- loads translations from `public/locales/{code}.json` via `i18next-http-backend`
-- detects language from cookie, browser, then html tag; caches in the `i18next` cookie
-- normalizes unsupported languages to `fallbackLng` (no invalid values stored in cookies)
-- syncs `<html lang>` and `<html dir>` on init and on `languageChanged`
-- treats keys as flat strings: both `keySeparator` and `nsSeparator` are disabled
+kubectl get secret monitoring-grafana `
+-n monitoring `
+-o jsonpath="{.data.admin-password}"
 
-### Using translations in components
 
-Import directly from `react-i18next`. No project-specific hook or cast is needed.
+Decode the password:
 
-```tsx
+[System.Text.Encoding]::UTF8.GetString(
+    [System.Convert]::FromBase64String(
+        (kubectl get secret monitoring-grafana -n monitoring -o jsonpath="{.data.admin-password}")
+    )
+)
+
+
+Port-forward Grafana:
+
+kubectl port-forward svc/monitoring-grafana -n monitoring 3000:80
+
+
+Open:
+
+http://localhost:3000
+
+
+Default username:
+
+admin
+
+Access Prometheus
+kubectl port-forward svc/monitoring-kube-prometheus-prometheus `
+-n monitoring `
+9090:9090
+
+
+Open:
+
+http://localhost:9090
+
+ArgoCD Installation
+
+Create namespace:
+
+kubectl create namespace argocd
+
+
+Add Helm repository:
+
+helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+
+
+Install ArgoCD:
+
+helm install argocd argo/argo-cd `
+  --namespace argocd `
+  --set configs.params."server\.insecure"=true
+
+
+Verify:
+
+kubectl get pods -n argocd
+
+Access ArgoCD
+
+Port-forward:
+
+kubectl port-forward svc/argocd-server -n argocd 8080:80
+
+
+Open:
+
+http://localhost:8080
+
+
+Retrieve the initial admin password:
+
+[System.Text.Encoding]::UTF8.GetString(
+  [System.Convert]::FromBase64String(
+    (kubectl get secret argocd-initial-admin-secret `
+      -n argocd `
+      -o jsonpath="{.data.password}")
+  )
+)
+
+
+Username:
+
+admin
+
+Deployment Workflow
+
+GitOps workflow:
+
+GitHub
+   │
+   ▼
+ArgoCD
+   │
+   ▼
+Kubernetes
+   │
+   ├── Deployment
+   ├── Service
+   ├── Ingress
+   ├── HPA
+   └── Monitoring
+
+
+Apply the application:
+
+kubectl apply -f .\argocd\univercity-app.yaml
+
+
+Check status:
+
+kubectl get application -n argocd
+
+
+Expected:
+
+NAME         SYNC STATUS   HEALTH STATUS
+univercity   Synced        Healthy
+
+Autoscaling
+
+Verify HPA:
+
+kubectl get hpa -n univercity
+
+
+Current configuration:
+
+Min Replicas: 3
+Max Replicas: 6
+
+
+Monitor scaling activity:
+
+kubectl get pods -n univercity -w
+
+Internationalization (i18n)
+
+This project uses:
+
+i18next
+react-i18next
+i18next-http-backend
+i18next-browser-languagedetector
+Configuration
+i18n.config.json
+public/locales/
+src/i18n/
+
+Using Translations
 import { useTranslation } from "react-i18next";
 
 const Title = () => {
   const { t } = useTranslation();
+
   return <h1>{t("home.hero.title")}</h1>;
 };
-```
 
-For language switching, the `i18n` instance also comes from `useTranslation()`:
-
-```tsx
+Change Language
 const { i18n } = useTranslation();
-void i18n.changeLanguage("zh-CN");
-```
 
-`languageOptions`, `normalizeLanguage`, `getLanguageDirection`, and `fallbackLng` can be imported from `@/i18n/config` (re-exports from `util.ts`).
+await i18n.changeLanguage("zh-CN");
 
-### Adding a language
+Tech Stack
+Frontend
+React
+TypeScript
+Vite
+Tailwind CSS
+shadcn/ui
+Platform
+Docker Desktop
+Kubernetes
+Ingress NGINX
+ArgoCD
+Observability
+Prometheus
+Grafana
+Alertmanager
+kube-state-metrics
+Node Exporter
+DevOps
+GitHub
+Helm
+GitOps
+Horizontal Pod Autoscaler (HPA)
+Architecture
+GitHub
+   │
+   ▼
+ArgoCD
+   │
+   ▼
+Kubernetes
+   │
+   ├── Ingress NGINX
+   ├── Univercity Frontend
+   ├── Service
+   ├── HPA (3-6)
+   └── Monitoring Stack
+       ├── Prometheus
+       ├── Grafana
+       ├── Alertmanager
+       └── Node Exporter
 
-1. Add an entry under `languages` in `i18n.config.json` with `code`, `label`, `detect`, `dir`.
-2. Create `public/locales/{code}.json` with the same key set as `public/locales/{fallbackLng}.json`.
-3. Translate values, preserving any `{{variables}}` and `<tag>...</tag>` structures.
+Deployment
 
-### Adding a translation key
+Push your code:
 
-1. Add the key to `public/locales/{fallbackLng}.json` first.
-2. Add the same key to every other locale file with its translated value.
-3. Use it via `t("group.key")` in components.
-
-### Backend handoff (temporary in-repo files)
-
-The following files are **temporary copies kept in the repo only until backend integration is complete**. The backend will eventually own validation, statistics, completion-rate dashboards, scan-for-new-strings, and auto-translate. After that integration lands, these files (and the corresponding `package.json` scripts) will be removed:
-
-- `scripts/check-i18n.mjs`, `scripts/scan-i18n.mjs`, `scripts/i18n-utils.mjs`, `scripts/i18n-source-usage.mjs`
-- `i18n.scan.json`
-- `reports/i18n/`
-- `docs/i18n-agent-spec.md`, `docs/i18n-contract.md`
-- `package.json` scripts: `i18n:check`, `i18n:scan`, and the `check` aggregate
-
-Until removed, you can still run `pnpm i18n:check` and `pnpm i18n:scan` locally; the canonical computation is the backend's responsibility.
-
----
-
-## Tech stack
-
-This project uses:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
----
-
-## Deployment
-
-To deploy, open your Enter.pro project and click "Publish"
-
-Your app will automatically build and go live at your production URL.
-
----
-
-✨ Keep prompting, keep building — Enter.pro handles the rest.
+git add .
+git commit -m "feature update"
+git push origin kube
