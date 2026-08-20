@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: uni-config
+  namespace: univercity
+
+data:
+  APP_NAME: "Univercity"
+  APP_ENV: "production"
+  TZ: "Asia/Dhaka"

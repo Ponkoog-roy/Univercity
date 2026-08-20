@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uni-ingress
+  namespace: univercity
+spec:
+  ingressClassName: nginx
+
+  rules:
+    - host: uni.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: uni-service
+                port:
+                  number: 80
