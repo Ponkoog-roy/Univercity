@@ -41,7 +41,7 @@ spec:
       containers:
         - name: frontend
 
-          image: ponkoog/univercity:latest
+          image: ponkoog/univercity:6d37e5e
           imagePullPolicy: IfNotPresent
 
           ports:
