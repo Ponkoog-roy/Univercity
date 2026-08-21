@@ -1,34 +1,185 @@
+ ✅ GitOps with ArgoCD
+ ✅ Monitoring with Prometheus/Grafana/Alertmanager
+ ✅ CI/CD with GitHub Actions
+ ✅ Semantic Versioning
+ ✅ HPA
+ ✅ App-of-Apps architecture
+
+New README Structure
+# Univercity
+
+Modern React application deployed on Kubernetes using GitOps practices with ArgoCD, automated CI/CD, autoscaling, and full observability through Prometheus and Grafana.
+
+---
+
+## Platform Features
+
+- React + TypeScript + Vite
+- Dockerized application
+- Kubernetes deployment
+- ArgoCD GitOps delivery
+- GitHub Actions CI/CD
+- Semantic Versioning
+- NGINX Ingress
+- Horizontal Pod Autoscaler (HPA)
+- Prometheus Monitoring
+- Grafana Dashboards
+- Alertmanager Alerting
+
+---
+
+## Architecture
+
+```text
+Developer
+    │
+    ▼
+   main
+    │
+    ▼
+GitHub Actions
+    │
+    ├── Test
+    ├── Build
+    ├── Push Docker Image
+    └── Update kube Branch
+                 │
+                 ▼
+                kube
+                 │
+                 ▼
+               ArgoCD
+                 │
+                 ▼
+            Kubernetes
+                 │
+      ┌──────────┼──────────┐
+      ▼          ▼          ▼
+   Ingress      HPA     Monitoring
+                        │
+              ┌─────────┴─────────┐
+              ▼                   ▼
+         Prometheus          Grafana
+
+Branch Strategy
+main
+
+Application source code.
+
+main
+├── src/
+├── public/
+├── Dockerfile
+├── package.json
+└── VERSION
+
+kube
+
+GitOps deployment manifests.
+
+kube
+├── k8s/
+├── argocd/
+└── monitoring/
 
 
-## Local development
+ArgoCD continuously watches the kube branch.
 
-Prefer to work locally? You can clone this repo and start developing right away:
+Local Development
 
-```bash
-# Step 1: Clone your project repository
-git clone <YOUR_GIT_URL>
+Clone the repository:
 
-# Step 2: Navigate into the project folder
-cd <YOUR_PROJECT_NAME>
+git clone https://github.com/Ponkoog-roy/Univercity.git
 
-# Step 3: Install all dependencies
+cd Univercity
+
+
+Install dependencies:
+
 pnpm install
 
-# Step 4: Start the local development server
+
+Run locally:
+
 pnpm dev
-```
 
-Push your commits — Enter.pro will automatically detect and sync your latest changes.
 
-# Docker desktop setup process
+Create a production build:
+
+pnpm build:prod
+
+Docker
+
+Build image locally:
+
+docker build -t ponkoog/univercity:v1.0.0 .
+
+
+Run locally:
+
+docker run -p 8085:80 ponkoog/univercity:v1.0.0
+
+
+Open:
+
+http://localhost:8085
+
+Kubernetes Setup
+
+Bootstrap the cluster:
+
 cd scripts
+
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+
 .\bootstrap-cluster.ps1
 
+Metrics Server
+
+Edit Metrics Server:
+
 kubectl edit deployment metrics-server -n kube-system
+
+
+Add:
+
 - --kubelet-insecure-tls
 
+
+Restart:
+
 kubectl rollout restart deployment metrics-server -n kube-system
+
+
+Verify:
+
+kubectl top nodes
+kubectl top pods -A
+
+ArgoCD
+
+Install:
+
+kubectl create namespace argocd
+
+helm repo add argo https://argoproj.github.io/argo-helm
+
+helm repo update
+
+helm install argocd argo/argo-cd `
+  --namespace argocd `
+  --set configs.params."server\.insecure"=true
+
+
+Access:
+
+kubectl port-forward svc/argocd-server -n argocd 8080:80
+
+http://localhost:8080
+
+Monitoring Stack
+
+Install:
 
 helm upgrade --install monitoring `
 prometheus-community/kube-prometheus-stack `
@@ -36,102 +187,163 @@ prometheus-community/kube-prometheus-stack `
 --create-namespace `
 -f .\monitoring\values.yaml
 
-next install argo
----
 
-## i18n
+Components:
 
-This template ships a minimal browser-side i18n baseline built on:
+Prometheus
+Grafana
+Alertmanager
+kube-state-metrics
+Prometheus Operator
+Node Exporter
+Grafana
 
-- `i18next`
-- `react-i18next`
-- `i18next-http-backend`
-- `i18next-browser-languagedetector`
+Access:
 
-### Source-of-truth files
+kubectl port-forward svc/monitoring-grafana `
+-n monitoring `
+3000:80
 
-The template only owns three pieces of i18n data:
+http://localhost:3000
 
-- `i18n.config.json` — language manifest (`fallbackLng`, `languages[].{code,label,detect,dir}`)
-- `public/locales/{code}.json` — flat dotted-key translations, one file per language
-- `src/i18n/config.ts` + `src/i18n/util.ts` — runtime entry and pure helpers
-- `src/components/language-switcher.tsx` — neutral-themed UI sample
 
-### Runtime behavior
+Default username:
 
-- reads the manifest from `i18n.config.json`
-- loads translations from `public/locales/{code}.json` via `i18next-http-backend`
-- detects language from cookie, browser, then html tag; caches in the `i18next` cookie
-- normalizes unsupported languages to `fallbackLng` (no invalid values stored in cookies)
-- syncs `<html lang>` and `<html dir>` on init and on `languageChanged`
-- treats keys as flat strings: both `keySeparator` and `nsSeparator` are disabled
+admin
 
-### Using translations in components
+Prometheus
 
-Import directly from `react-i18next`. No project-specific hook or cast is needed.
+Access:
 
-```tsx
-import { useTranslation } from "react-i18next";
+kubectl port-forward svc/monitoring-kube-prometheus-prometheus `
+-n monitoring `
+9090:9090
 
-const Title = () => {
-  const { t } = useTranslation();
-  return <h1>{t("home.hero.title")}</h1>;
-};
-```
+http://localhost:9090
 
-For language switching, the `i18n` instance also comes from `useTranslation()`:
+Alerting
 
-```tsx
-const { i18n } = useTranslation();
-void i18n.changeLanguage("zh-CN");
-```
+Configured alerts:
 
-`languageOptions`, `normalizeLanguage`, `getLanguageDirection`, and `fallbackLng` can be imported from `@/i18n/config` (re-exports from `util.ts`).
+FrontendDown
+FrontendHighCPU
+FrontendHighMemory
+PodRestarting
 
-### Adding a language
+Alert rules managed through PrometheusRule resources.
 
-1. Add an entry under `languages` in `i18n.config.json` with `code`, `label`, `detect`, `dir`.
-2. Create `public/locales/{code}.json` with the same key set as `public/locales/{fallbackLng}.json`.
-3. Translate values, preserving any `{{variables}}` and `<tag>...</tag>` structures.
+Autoscaling
 
-### Adding a translation key
+Verify HPA:
 
-1. Add the key to `public/locales/{fallbackLng}.json` first.
-2. Add the same key to every other locale file with its translated value.
-3. Use it via `t("group.key")` in components.
+kubectl get hpa -n univercity
 
-### Backend handoff (temporary in-repo files)
 
-The following files are **temporary copies kept in the repo only until backend integration is complete**. The backend will eventually own validation, statistics, completion-rate dashboards, scan-for-new-strings, and auto-translate. After that integration lands, these files (and the corresponding `package.json` scripts) will be removed:
+Configuration:
 
-- `scripts/check-i18n.mjs`, `scripts/scan-i18n.mjs`, `scripts/i18n-utils.mjs`, `scripts/i18n-source-usage.mjs`
-- `i18n.scan.json`
-- `reports/i18n/`
-- `docs/i18n-agent-spec.md`, `docs/i18n-contract.md`
-- `package.json` scripts: `i18n:check`, `i18n:scan`, and the `check` aggregate
+Min Replicas: 3
+Max Replicas: 6
 
-Until removed, you can still run `pnpm i18n:check` and `pnpm i18n:scan` locally; the canonical computation is the backend's responsibility.
 
----
+Watch scaling:
 
-## Tech stack
+kubectl get pods -n univercity -w
 
-This project uses:
+CI/CD Pipeline
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Workflow:
 
----
+Push to main
+      │
+      ▼
+GitHub Actions
+      │
+      ├── Test
+      ├── Build
+      ├── Push Docker Image
+      └── Update kube Branch
+                   │
+                   ▼
+                 ArgoCD
+                   │
+                   ▼
+              Kubernetes
 
-## Deployment
+Semantic Versioning
 
-To deploy, open your Enter.pro project and click "Publish"
+Version format:
 
-Your app will automatically build and go live at your production URL.
+MAJOR.MINOR.PATCH
 
----
 
-✨ Keep prompting, keep building — Enter.pro handles the rest.
+Examples:
+
+v1.0.0
+v1.0.1
+v1.0.2
+
+
+Version is tracked through:
+
+VERSION
+
+Tech Stack
+Frontend
+React
+TypeScript
+Vite
+Tailwind CSS
+shadcn/ui
+Platform
+Docker
+Kubernetes
+NGINX Ingress
+ArgoCD
+Observability
+Prometheus
+Grafana
+Alertmanager
+kube-state-metrics
+Node Exporter
+DevOps
+GitHub Actions
+Docker Hub
+GitOps
+Helm
+HPA
+Deployment Flow
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Docker Hub
+    │
+    ▼
+kube Branch
+    │
+    ▼
+ArgoCD
+    │
+    ▼
+Kubernetes
+    │
+    ▼
+Monitoring & Alerting
+
+Repository Status
+
+✅ GitOps
+ ✅ CI/CD
+ ✅ Kubernetes
+ ✅ ArgoCD
+ ✅ HPA
+ ✅ Monitoring
+ ✅ Grafana Dashboards
+ ✅ Prometheus Alerts
+ ✅ Semantic Versioning
+
