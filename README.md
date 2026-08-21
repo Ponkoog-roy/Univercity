@@ -35,6 +35,8 @@ prometheus-community/kube-prometheus-stack `
 -n monitoring `
 --create-namespace `
 -f .\monitoring\values.yaml
+
+next install argo
 ---
 
 ## i18n
