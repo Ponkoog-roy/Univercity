@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: univercity-frontend
+  namespace: univercity
+  labels:
+    app.kubernetes.io/name: univercity
+    app.kubernetes.io/component: frontend
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-2021-06
+    # patched per overlay with the ACM cert ARN for that environment's hostname
+    alb.ingress.kubernetes.io/certificate-arn: "REPLACE_ACM_CERT_ARN"
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    alb.ingress.kubernetes.io/success-codes: "200"
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
+    alb.ingress.kubernetes.io/waf-acl-id: "REPLACE_WAFV2_WEBACL_ARN"
+    # ExternalDNS reads this to create/update the Route53 record automatically
+    external-dns.alpha.kubernetes.io/hostname: "REPLACE.example.com"
+spec:
+  rules:
+    - host: "REPLACE.example.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: univercity-frontend
+                port:
+                  number: 80

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: univercity-frontend
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: "REPLACE_STAGING_ACM_CERT_ARN"
+    external-dns.alpha.kubernetes.io/hostname: "staging.univercity.example.com"
+spec:
+  rules:
+    - host: "staging.univercity.example.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: univercity-frontend
+                port:
+                  number: 80

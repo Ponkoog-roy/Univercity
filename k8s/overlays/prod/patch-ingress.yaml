@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: univercity-frontend
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: "REPLACE_PROD_ACM_CERT_ARN"
+    alb.ingress.kubernetes.io/waf-acl-id: "REPLACE_PROD_WAFV2_WEBACL_ARN"
+    external-dns.alpha.kubernetes.io/hostname: "univercity.example.com"
+spec:
+  rules:
+    - host: "univercity.example.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: univercity-frontend
+                port:
+                  number: 80

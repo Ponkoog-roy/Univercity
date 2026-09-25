@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: univercity-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: REPLACE_GIT_REPO_URL
+    targetRevision: REPLACE_PROD_TAG   # pinned semver tag, never a branch
+    path: k8s/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: univercity
+  # Intentionally no `automated:` block — prod requires an explicit
+  # `argocd app sync univercity-prod` (or UI click) after promotion sign-off.
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

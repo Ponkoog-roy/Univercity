@@ -1,0 +1,58 @@
+# Default-deny everything in the namespace, then explicitly allow what's needed.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: univercity
+spec:
+  podSelector: {}
+  policyTypes: ["Ingress", "Egress"]
+---
+# Allow inbound on the container port. With target-type: ip, ALB traffic arrives
+# directly from ALB ENIs inside the VPC (not from a cluster-local pod we can
+# label-select) — the ALB's own security group + WAF are the real ingress
+# perimeter here, so this policy scopes the port but not the source.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-alb-ingress
+  namespace: univercity
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: univercity
+      app.kubernetes.io/component: frontend
+  policyTypes: ["Ingress"]
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 8080
+---
+# Allow DNS resolution (needed for the Supabase hostname) and outbound HTTPS
+# (Supabase API + Enter.pro analytics). No pod-to-pod traffic is needed since
+# this is a static SPA with no internal service dependencies.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-egress-dns-https
+  namespace: univercity
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: univercity
+      app.kubernetes.io/component: frontend
+  policyTypes: ["Egress"]
+  egress:
+    - to:
+        - namespaceSelector: {}
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+      ports:
+        - protocol: TCP
+          port: 443

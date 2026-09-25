@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: univercity-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: REPLACE_GIT_REPO_URL
+    targetRevision: REPLACE_RELEASE_BRANCH   # e.g. "release/*" tracked via a tag, not main
+    path: k8s/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: univercity
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
