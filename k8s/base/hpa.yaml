@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: univercity-frontend
-  namespace: univercity
+
   labels:
     app.kubernetes.io/name: univercity
     app.kubernetes.io/component: frontend

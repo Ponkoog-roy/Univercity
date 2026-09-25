@@ -4,3 +4,4 @@ metadata:
   name: univercity-frontend
 spec:
   minAvailable: 2
+  maxAvailable: 4

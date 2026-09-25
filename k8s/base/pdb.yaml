@@ -2,7 +2,7 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: univercity-frontend
-  namespace: univercity
+
   labels:
     app.kubernetes.io/name: univercity
     app.kubernetes.io/component: frontend
