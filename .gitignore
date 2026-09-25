@@ -1,1 +1,35 @@
-node_modules
+# Kubernetes rendered output
+output.yaml
+*.rendered.yaml
+*.generated.yaml
+
+# Kustomize build output
+kustomize-output.yaml
+
+# Logs
+*.log
+
+# Local environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Helm
+*.tgz
+
+# ArgoCD local exports
+argocd-export.yaml
