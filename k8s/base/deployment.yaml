@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: univercity-frontend
-
   labels:
     app.kubernetes.io/name: univercity
     app.kubernetes.io/component: frontend
