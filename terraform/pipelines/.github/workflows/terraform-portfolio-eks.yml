@@ -1,0 +1,46 @@
+# WHY: kept as a manual trigger, not on every push, because this track is
+# meant to be stood up for a demo and torn down afterward, not continuously
+# reconciled. `terraform destroy` is its own manual job for the same
+# reason — an accidental push should never be able to delete the cluster.
+name: Terraform - portfolio EKS demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "plan, apply, or destroy"
+        required: true
+        default: "plan"
+        type: choice
+        options: [plan, apply, destroy]
+
+permissions:
+  contents: read
+  id-token: write
+
+defaults:
+  run:
+    working-directory: terraform/environments/portfolio/eks-demo
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    environment: portfolio-demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          aws-region: us-east-1
+      - run: terraform init
+      - run: terraform validate
+      - name: Plan
+        if: inputs.action == 'plan'
+        run: terraform plan -no-color
+      - name: Apply
+        if: inputs.action == 'apply'
+        run: terraform apply -auto-approve
+      - name: Destroy
+        if: inputs.action == 'destroy'
+        run: terraform destroy -auto-approve

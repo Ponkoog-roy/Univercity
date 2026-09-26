@@ -1,0 +1,6 @@
+region      = "us-east-1"
+root_domain = "univercity.example"
+create_zone = true
+site_domain = "app.univercity.example"
+bucket_name = "univercity-prod-site-CHANGE-ME-UNIQUE"
+price_class = "PriceClass_100"
