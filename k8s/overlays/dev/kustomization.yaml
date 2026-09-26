@@ -1,5 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: univercity
 
 resources:
   - ../../base
+
+patches:
+
+  - path: patch-hpa.yaml
+  - path: patch-deployment.yaml
+
+images:
+  - name: ponkoog/univercity
+    newTag: v1.0.3
