@@ -11,7 +11,3 @@ dist
 Dockerfile
 docker-compose.yml
 
-dev.yaml
-prod.yaml
-staging.yaml
-*.rendered.yaml

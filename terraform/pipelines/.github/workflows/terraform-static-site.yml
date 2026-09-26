@@ -1,0 +1,70 @@
+# WHY: infra changes to the production track should go through the same
+# review gate as app code — plan visible on the PR, apply only after merge.
+# This is separate from the existing docker-build.yml workflow, which
+# builds/deploys the APP; this workflow only touches infrastructure.
+name: Terraform - static-site (production)
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "plan, apply, or destroy"
+
+  # pull_request:
+  #   paths:
+  #     - "terraform/modules/static-site/**"
+  #     - "terraform/modules/dns-zone/**"
+  #     - "terraform/environments/production/static-site/**"
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - "terraform/environments/production/static-site/**"
+
+permissions:
+  contents: read
+  id-token: write # OIDC federation to AWS — no long-lived AWS keys in CI
+
+defaults:
+  run:
+    working-directory: terraform/environments/production/static-site
+
+jobs:
+  plan:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          aws-region: us-east-1
+      - run: terraform init
+      - run: terraform fmt -check -recursive ../../..
+      - run: terraform validate
+      - run: terraform plan -no-color
+        id: plan
+      - name: Comment plan on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Terraform plan (static-site):\n```\n" + `${{ steps.plan.outputs.stdout }}`.slice(0, 60000) + "\n```"
+            })
+
+  apply:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production # requires a manual approval gate configured on this GitHub Environment
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_TERRAFORM_ROLE_ARN }}
+          aws-region: us-east-1
+      - run: terraform init
+      - run: terraform apply -auto-approve

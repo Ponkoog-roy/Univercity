@@ -1,0 +1,5 @@
+region              = "us-east-1"
+root_domain         = "univercity.example"
+node_instance_types = ["t3.small"]
+use_spot            = false
+desired_size        = 2
