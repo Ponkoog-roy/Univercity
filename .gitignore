@@ -34,7 +34,6 @@ crash.log
 # ArgoCD local exports
 argocd-export.yaml
 
-
 dev.yaml
 prod.yaml
 staging.yaml
