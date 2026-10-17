@@ -6,7 +6,7 @@
  ✅ App-of-Apps architecture
 
 New README Structure
-# Univercity
+# University
 
 Modern React application deployed on Kubernetes using GitOps practices with ArgoCD, automated CI/CD, autoscaling, and full observability through Prometheus and Grafana.
 
