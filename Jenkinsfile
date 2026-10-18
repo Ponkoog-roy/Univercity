@@ -1,51 +1,106 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS 22.22.0'
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        skipDefaultCheckout(true)
+    }
+
+    environment {
+        CI = 'true'
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/Ponkoog-roy/Univercity.git'
+
+                sh '''
+                    echo "Branch: $(git branch --show-current)"
+                    echo "Commit: $(git rev-parse --short HEAD)"
+                '''
             }
         }
 
-        stage('Node Version') {
+        stage('Verify Environment') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
+                sh '''
+                    set -eu
+                    node --version
+                    npm --version
+                    pnpm --version
+                '''
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install --legacy-peer-deps'
+                sh '''
+                    set -eu
+
+                    if [ -f pnpm-lock.yaml ]; then
+                        pnpm install --frozen-lockfile
+                    else
+                        pnpm install --no-frozen-lockfile
+                    fi
+                '''
             }
         }
 
-        stage('Build') {
+        stage('Test and Quality Checks') {
             steps {
-                sh 'npm run build'
+                sh '''
+                    set -eu
+
+                    if node -e "process.exit(require('./package.json').scripts?.test ? 0 : 1)"; then
+                        pnpm run test
+                    elif node -e "process.exit(require('./package.json').scripts?.check ? 0 : 1)"; then
+                        pnpm run check
+                    else
+                        echo "No test/check script found. Skipping."
+                    fi
+                '''
             }
         }
 
-        stage('Verify Build') {
+        stage('Production Build') {
             steps {
-                sh 'ls -la dist'
+                sh '''
+                    set -eu
+                    pnpm run build
+
+                    test -d dist
+
+                    echo "Build completed"
+                    du -sh dist
+                '''
+            }
+        }
+
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts(
+                    artifacts: 'dist/**',
+                    fingerprint: true
+                )
             }
         }
     }
 
     post {
         success {
-            echo 'Build Successful'
+            echo 'CI pipeline completed successfully!'
         }
 
         failure {
-            echo 'Build Failed'
+            echo 'CI pipeline failed.'
+        }
+
+        always {
+            echo "Build result: ${currentBuild.currentResult}"
         }
     }
 }
