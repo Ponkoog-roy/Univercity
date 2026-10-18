@@ -1,106 +1,81 @@
 pipeline {
     agent any
 
-    options {
-        timestamps()
-        disableConcurrentBuilds()
-        skipDefaultCheckout(true)
-    }
-
     environment {
-        CI = 'true'
+        IMAGE_NAME = "ponkoog/univercity"
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/Ponkoog-roy/Univercity.git'
-
-                sh '''
-                    echo "Branch: $(git branch --show-current)"
-                    echo "Commit: $(git rev-parse --short HEAD)"
-                '''
-            }
-        }
-
-        stage('Verify Environment') {
-            steps {
-                sh '''
-                    set -eu
-                    node --version
-                    npm --version
-                    pnpm --version
-                '''
+                checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    set -eu
-
-                    if [ -f pnpm-lock.yaml ]; then
-                        pnpm install --frozen-lockfile
-                    else
-                        pnpm install --no-frozen-lockfile
-                    fi
+                    npm install -g pnpm@11.5.1
+                    pnpm install
                 '''
             }
         }
 
-        stage('Test and Quality Checks') {
+        stage('Build Application') {
             steps {
-                sh '''
-                    set -eu
-
-                    if node -e "process.exit(require('./package.json').scripts?.test ? 0 : 1)"; then
-                        pnpm run test
-                    elif node -e "process.exit(require('./package.json').scripts?.check ? 0 : 1)"; then
-                        pnpm run check
-                    else
-                        echo "No test/check script found. Skipping."
-                    fi
-                '''
+                sh 'pnpm build:prod'
             }
         }
 
-        stage('Production Build') {
+        stage('Version') {
             steps {
-                sh '''
-                    set -eu
-                    pnpm run build
+                script {
 
-                    test -d dist
+                    def version = readFile('VERSION').trim()
 
-                    echo "Build completed"
-                    du -sh dist
-                '''
+                    def parts = version.tokenize('.')
+
+                    def major = parts[0]
+                    def minor = parts[1]
+                    def patch = parts[2].toInteger() + 1
+
+                    env.NEW_VERSION = "${major}.${minor}.${patch}"
+                    env.IMAGE_TAG = "v${env.NEW_VERSION}"
+
+                    echo "Version: ${env.NEW_VERSION}"
+                }
             }
         }
 
-        stage('Archive Artifacts') {
+        stage('Docker Build & Push') {
+
             steps {
-                archiveArtifacts(
-                    artifacts: 'dist/**',
-                    fingerprint: true
-                )
+
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'dockerhub-creds',
+                        usernameVariable: 'DOCKER_USER',
+                        passwordVariable: 'DOCKER_PASS'
+                    )
+                ]) {
+
+                    sh '''
+                        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    '''
+
+                    sh """
+                        docker build \
+                        -t ${IMAGE_NAME}:latest \
+                        -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                    """
+
+                    sh """
+                        docker push ${IMAGE_NAME}:latest
+                        docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                    """
+                }
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'CI pipeline completed successfully!'
-        }
-
-        failure {
-            echo 'CI pipeline failed.'
-        }
-
-        always {
-            echo "Build result: ${currentBuild.currentResult}"
         }
     }
 }
